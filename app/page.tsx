@@ -20,11 +20,11 @@ export default function Home() {
     <div className="flex flex-col w-full min-h-[200vh]">
       <Header />
       <div className="absolute top-0 h-[calc(80px+3rem)] bg-background-svg-top w-full"></div>
-      <div className="relative h-[400px] w-full z-0 bg-background-svg-top overflow-hidden">
-        <div className="absolute bottom-[150px] left-0 z-0 w-[calc(100vw+4rem)] h-[100px] -m-12">
-          <div className="relative bg-background-svg-middle bottom-0 z-20 w-full h-[300px] -m-px pointer-events-none rotate-3 origin-bottom-right"></div>
+      <div className="relative min-h-[350px] sm:min-h-[400px] w-full z-0 bg-background-svg-top overflow-hidden">
+        <div className="absolute bottom-[125px] left-0 z-0 w-[calc(100vw+4rem)] h-[100px] -m-12">
+          <div className="relative bg-background-svg-middle bottom-0 z-20 w-full h-[300px] -m-px pointer-events-none rotate-[4deg] origin-bottom-right"></div>
           {/* IMAGES ALL THE WAY IN THE BACK */}
-          <div className="absolute -bottom-4 z-10 select-none left-0 rotate-3 origin-bottom-right">
+          <div className="absolute -bottom-4 z-10 select-none left-0 rotate-[4deg] origin-bottom-right">
             <div className="relative w-full flex mr-16">
               {/* 1 marquee */}
               <div className="flex motion-safe:animate-marquee-slow w-full gap-16 items-end">
@@ -33,7 +33,7 @@ export default function Home() {
                     key={index}
                     src="/assets/images/homepage_1.jpg"
                     alt="Picture of the author"
-                    size={200}
+                    size="md"
                   />
                 ))}
               </div>
@@ -43,7 +43,7 @@ export default function Home() {
                     key={index}
                     src="/assets/images/homepage_1.jpg"
                     alt="Picture of the author"
-                    size={200}
+                    size="md"
                   />
                 ))}
               </div>
@@ -62,7 +62,7 @@ export default function Home() {
                     key={index}
                     src="/assets/images/homepage_1.jpg"
                     alt="Picture of the author"
-                    size={250}
+                    size="lg"
                   />
                 ))}
               </div>
@@ -72,7 +72,7 @@ export default function Home() {
                     key={index}
                     src="/assets/images/homepage_1.jpg"
                     alt="Picture of the author"
-                    size={250}
+                    size="lg"
                   />
                 ))}
               </div>
@@ -104,9 +104,9 @@ export default function Home() {
           </div>
         </div> */}
       </div>
-      <div className="relative -mt-16">
+      <div className="relative ">
         <div className="max-w-5xl mx-auto px-8 w-full">
-          <h2 className="text-xl font-bold">My life</h2>
+          <h2 className="text-xl font-bold">Hi</h2>
           <div className="d">dit werkt</div>
           <div className="rounded-sm">
             <h3>Ai</h3>
