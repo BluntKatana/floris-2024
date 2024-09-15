@@ -3,18 +3,6 @@ import Link from "next/link";
 import { MarqueeImage } from "./components/marquee-image";
 import { ThemeToggle } from "./components/theme-toggle";
 
-type EventType = "career" | "project" | "education" | "thought" | "random";
-
-type Event = {
-  type: EventType;
-  title: string;
-  description: string;
-  date: string;
-  tags: string[];
-};
-
-const EVENT = [{}];
-
 export default function Home() {
   return (
     <div className="flex flex-col w-full min-h-[200vh]">
