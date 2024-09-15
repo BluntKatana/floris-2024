@@ -72,8 +72,8 @@ const config: Config = {
         "in-out": "var(--transition-in-out)",
       },
       animation: {
-        marquee: "marquee 25s linear infinite",
-        "marquee-slow": "marquee 35s linear infinite",
+        marquee: "marquee 35s linear infinite",
+        "marquee-slow": "marquee 50s linear infinite",
       },
       keyframes: {
         marquee: {

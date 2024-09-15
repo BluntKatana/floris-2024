@@ -5,9 +5,10 @@ interface MarqueeImageProps {
   src: string;
   alt: string;
   size: "md" | "lg";
+  priority?: boolean;
 }
 
-export function MarqueeImage({ src, alt, size }: MarqueeImageProps) {
+export function MarqueeImage({ src, alt, size, priority }: MarqueeImageProps) {
   // rotate between -2 and 2 degrees
   const rotate = Math.random() * 4 - 2;
 
@@ -30,7 +31,8 @@ export function MarqueeImage({ src, alt, size }: MarqueeImageProps) {
         src={src}
         alt={alt}
         fill
-        className="object-cover object-left-center"
+        className="object-cover object-bottom"
+        priority={priority}
       />
     </div>
   );
