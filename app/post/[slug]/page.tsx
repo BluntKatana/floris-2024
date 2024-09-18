@@ -59,7 +59,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
   };
 }
 
-export default function Blog({ params }: PageProps) {
+export default function Post({ params }: PageProps) {
   const post = getPosts().find((post) => post.slug === params.slug);
 
   if (!post) {
@@ -82,7 +82,7 @@ export default function Blog({ params }: PageProps) {
             image: post.metadata.image
               ? `${baseUrl}${post.metadata.image}`
               : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-            url: `${baseUrl}/blog/${post.slug}`,
+            url: `${baseUrl}/post/${post.slug}`,
             author: {
               "@type": "Person",
               name: "Floris Bos",

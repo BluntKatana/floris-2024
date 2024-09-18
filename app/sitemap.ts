@@ -3,7 +3,7 @@ import { getPosts } from "./post/parse-posts";
 export const baseUrl = process.env.BASE_URL;
 
 export default async function sitemap() {
-  const blogs = getPosts().map((post) => ({
+  const posts = getPosts().map((post) => ({
     url: `${baseUrl}/post/${post.slug}`,
     lastModified: post.metadata.publishedAt,
   }));
@@ -13,5 +13,5 @@ export default async function sitemap() {
     lastModified: new Date().toISOString().split("T")[0],
   }));
 
-  return [...routes, ...blogs];
+  return [...routes, ...posts];
 }
