@@ -1,6 +1,6 @@
 import { getPosts } from "./post/parse-posts";
 
-const baseUrl = process.env.BASE_URL;
+export const baseUrl = process.env.BASE_URL;
 
 export default async function sitemap() {
   const blogs = getPosts().map((post) => ({

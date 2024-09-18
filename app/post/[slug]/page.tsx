@@ -3,8 +3,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next/types";
 import { getPosts } from "../parse-posts";
 import { formatDistance, formatPublishedAt } from "@/app/utils/date";
-
-const baseUrl = process.env.BASE_URL;
+import { baseUrl } from "@/app/sitemap";
 
 export async function generateStaticParams() {
   const posts = getPosts();

@@ -35,7 +35,11 @@ export function Header() {
             </div>
             <div className="flex items-center gap-4">
               <ThemeToggle />
-              <Link href="/rss.xml" className="size-10 grid place-items-center">
+              <Link
+                href="/rss"
+                target="_blank"
+                className="size-10 grid place-items-center"
+              >
                 <Rss className="size-5" />
               </Link>
             </div>

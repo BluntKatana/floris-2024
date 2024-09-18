@@ -1,3 +1,5 @@
+import { baseUrl } from "./sitemap";
+
 export default function robots() {
   return {
     rules: [
@@ -5,6 +7,6 @@ export default function robots() {
         userAgent: "*",
       },
     ],
-    sitemap: `${process.env.BASE_URL}/sitemap.xml`,
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }
