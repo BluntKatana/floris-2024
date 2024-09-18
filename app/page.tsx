@@ -1,7 +1,10 @@
+import { Feed } from "./components/feed";
 import { MarqueeImage } from "./components/marquee-image";
-import { formatDistance } from "date-fns";
+import { getPosts } from "./post/parse-posts";
 
 export default function Home() {
+  const posts = getPosts();
+
   return (
     <>
       {/* Fill up header with correct color */}
@@ -78,34 +81,7 @@ export default function Home() {
         <h2 className="text-base font-bold mb-9 uppercase text-header-section tracking-[0.125rem]">
           Everything about me
         </h2>
-        <div className="space-y-5">
-          {Array.from({ length: 4 }).map((_, index) => (
-            <div
-              key={index}
-              className="rounded-md max-w-xl w-fit p-5 border border-border"
-            >
-              <div className="flex justify-between items-center">
-                <h3 className="font-semibold text-[22px]">
-                  Start of Jojoschool
-                </h3>
-                <time className="text-sm text-muted-foreground">
-                  {formatDistance(
-                    new Date(Math.random() * 23 + 2010, 3, 1),
-                    new Date(),
-                    {
-                      addSuffix: true,
-                    }
-                  )}
-                </time>
-              </div>
-              <p className="mt-4">
-                Jojoschool was founded in April 2021 by Jojo. It was a small
-                school with only 3 students. The school was founded to provide a
-                safe environment for children to learn and grow.
-              </p>
-            </div>
-          ))}
-        </div>
+        <Feed posts={posts} />
       </section>
     </>
   );

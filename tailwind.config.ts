@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -15,6 +16,7 @@ const config: Config = {
       colors: {
         background: {
           DEFAULT: "hsl(var(--background))",
+          /* for svg */
           "svg-top": "hsl(var(--background-svg-top))",
           "svg-middle": "hsl(var(--background-svg-middle))",
           "svg-bottom": "hsl(var(--background-svg-bottom))",
@@ -23,7 +25,18 @@ const config: Config = {
         header: {
           section: "hsl(var(--header-section))",
         },
+        tag: {
+          1: {
+            DEFAULT: "hsl(var(--tag-1))",
+            active: "hsl(var(--tag-1-active))",
+          },
+          2: {
+            DEFAULT: "hsl(var(--tag-2))",
+            active: "hsl(var(--tag-2-active))",
+          },
+        },
 
+        /* other */
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
@@ -81,6 +94,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
 export default config;
