@@ -33,7 +33,10 @@ body {
     /* colors */
     --background: 34 47% 97%;
     --foreground: 0 0% 13%;
-    /* --card: 0 0% 100%;
+    --border: 34 47% 85%;
+    --header-section: 142 76% 36%; /* text-green-600 */
+
+    --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
@@ -47,9 +50,8 @@ body {
     --accent-foreground: 0 0% 9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%; */
+    --ring: 0 0% 3.9%;
 
     --radius: 0.5rem;
   }
@@ -66,7 +68,10 @@ body {
     /* colors */
     --background: 0 0% 13%;
     --foreground: 0 0% 98%;
-    /* --card: 0 0% 3.9%;
+    --border: 0 0% 25%;
+    --header-section: 142 71% 45%; /* text-green-500 */
+
+    --card: 0 0% 3.9%;
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 3.9%;
     --popover-foreground: 0 0% 98%;
@@ -80,15 +85,18 @@ body {
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%; */
+    --ring: 0 0% 83.1%;
   }
 }
 
 @layer base {
   body {
     @apply bg-background text-foreground;
+  }
+
+  .section {
+    @apply max-w-5xl mx-auto px-8 w-full;
   }
 }
 

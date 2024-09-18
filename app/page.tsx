@@ -1,12 +1,10 @@
-import { Rss } from "lucide-react";
-import Link from "next/link";
 import { MarqueeImage } from "./components/marquee-image";
-import { ThemeToggle } from "./components/theme-toggle";
+import { formatDistance } from "date-fns";
 
 export default function Home() {
   return (
-    <div className="flex flex-col w-full min-h-[200vh]">
-      <Header />
+    <>
+      {/* Fill up header with correct color */}
       <div className="absolute top-0 h-[calc(80px+3rem)] bg-background-svg-top w-full"></div>
       <div className="relative min-h-[350px] sm:min-h-[400px] 2xl:min-h-[450px] w-full z-0 bg-background-svg-top overflow-hidden">
         <div className="absolute bottom-[125px] left-0 z-0 w-[calc(100vw+4rem)] h-[100px] -m-12">
@@ -76,60 +74,39 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="relative ">
-        <div className="max-w-5xl mx-auto px-8 w-full">
-          <h2 className="text-xl font-bold">Hi</h2>
-          <div className="d">dit werkt</div>
-          <div className="rounded-sm">
-            <h3>Ai</h3>
-            <p>Welcome</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Header() {
-  return (
-    <div className="mt-12 sticky top-0 left-0 right-0 w-full z-50 backdrop-blur-sm">
-      <div className="max-w-5xl px-8 mx-auto w-full">
-        <div className="h-[80px] w-full flex items-end">
-          <header className="w-full flex h-[48px] items-center justify-between gap-1">
-            <div className="gap-12 flex items-center">
-              <Link href="/" className="h-12 flex flex-col justify-center">
-                <h1 className="text-2xl font-bold">Floris Bos</h1>
-              </Link>
-              <div className="items-center gap-4 hidden lg:flex">
-                <Link
-                  href="/about-me"
-                  className="px-4 h-12 flex flex-col justify-center"
-                >
-                  <span>About</span>
-                </Link>
-                <Link
-                  href="/resume"
-                  className="px-4 h-12 flex flex-col justify-center"
-                >
-                  <span>Resume</span>
-                </Link>
-                <Link
-                  href="/thoughts"
-                  className="px-4 h-12 flex flex-col justify-center"
-                >
-                  <span>Thoughts</span>
-                </Link>
+      <section className="section">
+        <h2 className="text-base font-bold mb-9 uppercase text-header-section tracking-[0.125rem]">
+          Everything about me
+        </h2>
+        <div className="space-y-5">
+          {Array.from({ length: 4 }).map((_, index) => (
+            <div
+              key={index}
+              className="rounded-md max-w-xl w-fit p-5 border border-border"
+            >
+              <div className="flex justify-between items-center">
+                <h3 className="font-semibold text-[22px]">
+                  Start of Jojoschool
+                </h3>
+                <time className="text-sm text-muted-foreground">
+                  {formatDistance(
+                    new Date(Math.random() * 23 + 2010, 3, 1),
+                    new Date(),
+                    {
+                      addSuffix: true,
+                    }
+                  )}
+                </time>
               </div>
+              <p className="mt-4">
+                Jojoschool was founded in April 2021 by Jojo. It was a small
+                school with only 3 students. The school was founded to provide a
+                safe environment for children to learn and grow.
+              </p>
             </div>
-            <div className="flex items-center gap-4">
-              <ThemeToggle />
-              <Link href="/rss.xml" className="size-10 grid place-items-center">
-                <Rss className="size-5" />
-              </Link>
-            </div>
-          </header>
+          ))}
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }

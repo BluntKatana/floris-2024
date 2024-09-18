@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "./components/theme-provider";
+import { Header } from "./components/header";
 
 const inter = localFont({
   src: [
@@ -46,7 +47,10 @@ export default function RootLayout({
         className={`${inter.variable} ${wotfard.variable} font-mono antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
+          <div className="flex flex-col w-full min-h-[200vh]">
+            <Header />
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>
