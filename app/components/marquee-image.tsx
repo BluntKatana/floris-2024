@@ -10,12 +10,13 @@ interface MarqueeImageProps {
 
 export function MarqueeImage({ src, alt, size, priority }: MarqueeImageProps) {
   // rotate between -2 and 2 degrees
-  const rotate = Math.random() * 4 - 2;
 
   const classes: Record<MarqueeImageProps["size"], string> = {
     md: "size-[150px] sm:size-[175px] md:size-[200px]",
     lg: "size-[200px] sm:size-[225px] md:size-[250px]",
   };
+
+  const rotate = Math.random() * 4 - 2;
 
   return (
     <div

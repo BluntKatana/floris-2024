@@ -22,7 +22,10 @@ export default function Home() {
                   {Array.from({ length: 6 }).map((_, index) => (
                     <MarqueeImage
                       key={index}
-                      src="/assets/images/homepage_1.jpg"
+                      src={`/assets/images/homepage_${Math.min(
+                        index + 1,
+                        5
+                      )}.jpg`}
                       alt="Picture of the author"
                       size="md"
                       priority
@@ -33,7 +36,10 @@ export default function Home() {
                   {Array.from({ length: 6 }).map((_, index) => (
                     <MarqueeImage
                       key={index}
-                      src="/assets/images/homepage_1.jpg"
+                      src={`/assets/images/homepage_${Math.min(
+                        index + 1,
+                        5
+                      )}.jpg`}
                       alt="Picture of the author"
                       size="md"
                     />
@@ -55,7 +61,10 @@ export default function Home() {
                   {Array.from({ length: 6 }).map((_, index) => (
                     <MarqueeImage
                       key={index}
-                      src="/assets/images/homepage_1.jpg"
+                      src={`/assets/images/homepage_${Math.min(
+                        index + 1,
+                        5
+                      )}.jpg`}
                       alt="Picture of the author"
                       size="lg"
                       priority
@@ -66,7 +75,10 @@ export default function Home() {
                   {Array.from({ length: 6 }).map((_, index) => (
                     <MarqueeImage
                       key={index}
-                      src="/assets/images/homepage_1.jpg"
+                      src={`/assets/images/homepage_${Math.min(
+                        index + 1,
+                        5
+                      )}.jpg`}
                       alt="Picture of the author"
                       size="lg"
                     />
@@ -79,7 +91,7 @@ export default function Home() {
       </div>
       <section className="section">
         <h2 className="text-base font-bold mb-9 uppercase text-header-section tracking-[0.125rem]">
-          Everything about me
+          What I&apos;m up to
         </h2>
         <Feed posts={posts} />
       </section>
