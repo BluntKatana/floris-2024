@@ -47,7 +47,7 @@ export default function RootLayout({
         className={`${inter.variable} ${wotfard.variable} font-mono antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="flex flex-col w-full min-h-[200vh]">
+          <div className="flex flex-col w-full">
             <Header />
             {children}
           </div>

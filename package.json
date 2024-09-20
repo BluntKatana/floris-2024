@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "gen:svg": "npx @svgr/cli --out-dir ./app/assets/svg --ignore-existing --typescript --no-runtime-config -- svg",
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
