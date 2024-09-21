@@ -8,6 +8,7 @@ type Metadata = {
   publishedAt: string;
   summary: string;
   image?: string;
+  tags?: string[];
 };
 
 function parseFrontmatter(fileContent: string) {
@@ -20,10 +21,16 @@ function parseFrontmatter(fileContent: string) {
 
   frontMatterLines.forEach((line) => {
     const [key, ...valueArr] = line.split(": ");
-    let value = valueArr.join(": ").trim();
+    let value: string = valueArr.join(": ").trim();
     value = value.replace(/^['"](.*)['"]$/, "$1"); // Remove quotes
+
+    if (key === "tags") {
+      value = JSON.parse(value);
+    }
     metadata[key.trim() as keyof Metadata] = value;
   });
+
+  console.log(metadata);
 
   return { metadata: metadata as Metadata, content };
 }

@@ -1,8 +1,9 @@
-import Link from "next/link";
-import Image from "next/image";
+import { MDXComponents } from "mdx/types";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { highlight } from "sugar-high";
+import Image from "next/image";
+import Link from "next/link";
 import React, { ReactNode } from "react";
+import { highlight } from "sugar-high";
 
 function Table({ data }: { data: { headers: string[]; rows: string[][] } }) {
   const headers = data.headers.map((header, index) => (
@@ -89,22 +90,29 @@ function createHeading(level: number) {
   return Heading;
 }
 
+export const customComponents: MDXComponents = {
+  h1: createHeading(1),
+  h2: createHeading(2),
+  h3: createHeading(3),
+  h4: createHeading(4),
+  h5: createHeading(5),
+  h6: createHeading(6),
+  Image: RoundedImage,
+  a: CustomLink,
+  // @ts-expect-error - Code will always have string children
+  code: Code,
+  Table,
+};
+
 export function CustomMDX(props: React.ComponentProps<typeof MDXRemote>) {
   return (
     <MDXRemote
       {...props}
+      options={{
+        parseFrontmatter: true,
+      }}
       components={{
-        h1: createHeading(1),
-        h2: createHeading(2),
-        h3: createHeading(3),
-        h4: createHeading(4),
-        h5: createHeading(5),
-        h6: createHeading(6),
-        Image: RoundedImage,
-        a: CustomLink,
-        // @ts-expect-error - Code will always have string children
-        code: Code,
-        Table,
+        ...customComponents,
         ...(props.components || {}),
       }}
     />

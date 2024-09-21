@@ -95,6 +95,7 @@ export default function Home() {
         </h2>
         <Feed posts={posts} />
       </section>
+      <div className="h-16"></div>
     </>
   );
 }

@@ -38,6 +38,7 @@ export function Feed({ posts }: FeedProps) {
           number={1}
           onClick={() => setFilter("all")}
           active={filter === "all"}
+          size="md"
         >
           I&apos;m a visitor
         </Tag>
@@ -45,13 +46,18 @@ export function Feed({ posts }: FeedProps) {
           number={1}
           onClick={() => setFilter("recruiter")}
           active={filter === "recruiter"}
+          size="md"
         >
           I&apos;m a recruiter
         </Tag>
       </div>
-      <div className="space-y-5 mt-7">
+      <div className="flex gap-5 mt-7 flex-col">
         {posts.map((post) => (
-          <Link key={post.slug} href={`/post/${post.slug}`}>
+          <Link
+            className="w-fit h-fit"
+            key={post.slug}
+            href={`/post/${post.slug}`}
+          >
             <FeedCard post={post} />
           </Link>
         ))}
@@ -62,14 +68,21 @@ export function Feed({ posts }: FeedProps) {
 
 function FeedCard({ post }: { post: Post }) {
   return (
-    <div className="rounded-md max-w-xl w-fit p-5 border border-border">
-      <div className="flex justify-between items-center">
-        <h3 className="font-semibold text-[22px]">{post.metadata.title}</h3>
-        <time className="text-sm text-muted-foreground">
-          {formatDistance(formatPublishedAt(post.metadata.publishedAt))}
-        </time>
-      </div>
-      <p className="mt-4">{post.metadata.summary}</p>
-    </div>
+    <fieldset className="rounded-md max-w-xl w-fit p-5 border border-border">
+      <legend className="text-sm text-muted-foreground text-nowrap px-2">
+        {formatDistance(formatPublishedAt(post.metadata.publishedAt))}
+      </legend>
+      <h3 className="font-semibold text-[22px]">{post.metadata.title}</h3>
+      <p className="mt-2">{post.metadata.summary}</p>
+      {post.metadata.tags && (
+        <div className="flex gap-2 mt-3">
+          {post.metadata.tags.map((tag) => (
+            <Tag key={tag} number={1} size="sm">
+              {`#${tag}`}
+            </Tag>
+          ))}
+        </div>
+      )}
+    </fieldset>
   );
 }

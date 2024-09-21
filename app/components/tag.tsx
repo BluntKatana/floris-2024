@@ -6,6 +6,7 @@ type TagProps = {
   className?: string;
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   active?: boolean;
+  size: "sm" | "md";
 };
 
 export function Tag({
@@ -14,6 +15,7 @@ export function Tag({
   className,
   onClick,
   active,
+  size,
 }: TagProps) {
   const classes: Record<TagProps["number"], string> = {
     1: cn("active:bg-tag-1-active border-tag-1", {
@@ -24,10 +26,31 @@ export function Tag({
     }),
   };
 
+  const sizeClasses: Record<TagProps["size"], string> = {
+    sm: "px-2 py-1 text-xs",
+    md: "px-3 py-1 text-sm",
+  };
+
+  if (!onClick) {
+    return (
+      <span
+        className={cn(
+          "rounded-lg w-fit border border-solid transition-colors in-out duration-200 text-foreground",
+          sizeClasses[size],
+          classes[number],
+          className
+        )}
+      >
+        {children}
+      </span>
+    );
+  }
+
   return (
     <button
       className={cn(
-        "relative px-3 py-1 rounded-lg w-fit border border-solid transition-colors in-out duration-200 text-foreground",
+        "relative rounded-lg w-fit border border-solid transition-colors in-out duration-200 text-foreground",
+        sizeClasses[size],
         classes[number],
         className
       )}
