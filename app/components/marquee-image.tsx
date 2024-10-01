@@ -9,8 +9,6 @@ interface MarqueeImageProps {
 }
 
 export function MarqueeImage({ src, alt, size, priority }: MarqueeImageProps) {
-  // rotate between -2 and 2 degrees
-
   const classes: Record<MarqueeImageProps["size"], string> = {
     md: "size-[150px] sm:size-[175px] md:size-[200px]",
     lg: "size-[200px] sm:size-[225px] md:size-[250px]",
@@ -20,11 +18,9 @@ export function MarqueeImage({ src, alt, size, priority }: MarqueeImageProps) {
 
   return (
     <div
-      style={{
-        rotate: `${rotate}deg`,
-      }}
+      style={{ rotate: `${rotate}deg` }}
       className={cn(
-        "brightness hover:brightness-hover relative bg-accent hover:-translate-y-2 hover:scale-110 hover:-rotate-3 transition-all in-out rounded-md duration-200 overflow-hidden origin-bottom",
+        "brightness hover:brightness-hover relative bg-accent hover:-translate-y-2 hover:scale-110 hover:-rotate-3 transition-all in-out rounded-md duration-200 overflow-hidden origin-bottom motion-reduce:transform-none",
         classes[size]
       )}
     >

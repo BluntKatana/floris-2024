@@ -74,15 +74,6 @@ function FeedCard({ post }: { post: Post }) {
       </legend>
       <h3 className="font-semibold text-[22px]">{post.metadata.title}</h3>
       <p className="mt-2">{post.metadata.summary}</p>
-      {post.metadata.tags && (
-        <div className="flex gap-2 mt-3">
-          {post.metadata.tags.map((tag) => (
-            <Tag key={tag} number={1} size="sm">
-              {`#${tag}`}
-            </Tag>
-          ))}
-        </div>
-      )}
     </fieldset>
   );
 }
