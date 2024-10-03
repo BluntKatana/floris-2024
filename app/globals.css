@@ -22,13 +22,13 @@ body {
     --theme-duration: 500ms;
     --theme-timing: cubic-bezier(0.41, 0.1, 0.13, 1);
 
-    --image-brightness: 1;
-    --image-brightness-hover: 1.1;
+    --image-brightness: 0.8;
+    --image-brightness-hover: 1;
 
     /* for svgs */
     --background-svg-top: 34 47% 82%;
     --background-svg-middle: 34 47% 90%;
-    --background-svg-bottom: 34 47% 97%;
+    --background-svg-bottom: var(--background);
 
     /* colors */
     --background: 34 47% 97%;
@@ -79,8 +79,8 @@ body {
     --background-svg-middle: 0 0% 9%;
     --background-svg-bottom: 0 0% 13%;
 
-    --image-brightness: 0.9;
-    --image-brightness-hover: 1;
+    --image-brightness: 0.6;
+    --image-brightness-hover: 0.8;
 
     /* colors */
     --background: 0 0% 13%;

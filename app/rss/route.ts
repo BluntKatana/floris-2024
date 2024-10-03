@@ -1,8 +1,8 @@
-import { getPosts } from "../post/parse-posts";
+import { getPublicPosts } from "../post/parse-posts";
 import { baseUrl } from "../sitemap";
 
 export async function GET() {
-  const allPosts = getPosts();
+  const allPosts = getPublicPosts();
 
   const itemsXml = allPosts
     .sort((a, b) => {

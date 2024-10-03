@@ -1,12 +1,12 @@
 import { CustomMDX } from "@/app/components/mdx";
 import { notFound } from "next/navigation";
 import { Metadata } from "next/types";
-import { getPosts } from "../parse-posts";
+import { getPublicPosts } from "../parse-posts";
 import { formatDistance, formatPublishedAt } from "@/app/utils/date";
 import { baseUrl } from "@/app/sitemap";
 
 export async function generateStaticParams() {
-  const posts = getPosts();
+  const posts = getPublicPosts();
 
   return posts.map((post) => ({
     slug: post.slug,
@@ -18,7 +18,7 @@ type PageProps = {
 };
 
 export function generateMetadata({ params }: PageProps): Metadata {
-  const post = getPosts().find((post) => post.slug === params.slug);
+  const post = getPublicPosts().find((post) => post.slug === params.slug);
   if (!post) {
     return {
       title: "Not Found",
@@ -60,7 +60,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
 }
 
 export default function Post({ params }: PageProps) {
-  const post = getPosts().find((post) => post.slug === params.slug);
+  const post = getPublicPosts().find((post) => post.slug === params.slug);
 
   if (!post) {
     notFound();

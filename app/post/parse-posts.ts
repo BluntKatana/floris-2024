@@ -10,6 +10,7 @@ type MetaData = {
   summary: string;
   image?: string;
   tags?: string[];
+  public?: boolean;
 };
 
 function parseFrontmatter(fileContent: string) {
@@ -40,8 +41,10 @@ function getMDXData(dir: string) {
   });
 }
 
-export function getPosts() {
-  return getMDXData(path.join(process.cwd(), "app", "post"));
+export function getPublicPosts() {
+  const posts = getMDXData(path.join(process.cwd(), "app", "post"));
+
+  return posts.filter((post) => post.metadata.public);
 }
 
-export type Post = ReturnType<typeof getPosts>[number];
+export type Post = ReturnType<typeof getPublicPosts>[number];

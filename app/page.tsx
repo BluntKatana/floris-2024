@@ -1,9 +1,9 @@
 import { Feed } from "./components/feed";
 import { MarqueeImage } from "./components/marquee-image";
-import { getPosts } from "./post/parse-posts";
+import { getPublicPosts } from "./post/parse-posts";
 
 export default function Home() {
-  const posts = getPosts();
+  const posts = getPublicPosts();
 
   return (
     <>
