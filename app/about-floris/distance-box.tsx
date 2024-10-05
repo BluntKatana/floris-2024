@@ -5,7 +5,6 @@ import { MapContainer, Marker, Polyline, TileLayer } from "react-leaflet";
 import { generateRandomCoordinates } from "../utils/points";
 import { BentoBox } from "./about-floris-grid";
 import { Coordinates, MY_COORDINATES } from "./about-floris.constants";
-import { House } from "lucide-react";
 
 type DistanceBoxProps = {
   userCoordinates?: Coordinates;
