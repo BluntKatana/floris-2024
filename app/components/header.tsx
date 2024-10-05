@@ -14,7 +14,7 @@ export function Header() {
               </Link>
               <div className="items-center gap-4 hidden lg:flex">
                 <Link
-                  href="/about-me"
+                  href="/about-floris"
                   className="px-4 h-12 flex flex-col justify-center"
                 >
                   <span>About</span>

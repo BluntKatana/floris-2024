@@ -4,6 +4,10 @@ import createMDX from "@next/mdx";
 const nextConfig = {
   // Configure pageExtensions to include md and mdx
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
+
+  images: {
+    domains: ["picsum.photos"],
+  },
 };
 
 const withMDX = createMDX({});

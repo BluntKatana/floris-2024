@@ -16,9 +16,9 @@ export function MDXLink({ icon, ...linkProps }: MDXLinkProps) {
       className={cn("items-center space-x-1", linkProps.className)}
     >
       {icon && (
-        <div className="inline-block [&>svg]:size-6 rounded-sm overflow-hidden translate-y-[6px] w-fit h-fit">
+        <span className="inline-block [&>svg]:size-6 rounded-sm overflow-hidden translate-y-[6px] w-fit h-fit">
           {icon}
-        </div>
+        </span>
       )}
       <span>{linkProps.children}</span>
     </Link>

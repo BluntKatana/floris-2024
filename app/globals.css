@@ -22,12 +22,12 @@ body {
     --theme-duration: 500ms;
     --theme-timing: cubic-bezier(0.41, 0.1, 0.13, 1);
 
-    --image-brightness: 0.8;
+    --image-brightness: ;
     --image-brightness-hover: 1;
 
     /* for svgs */
-    --background-svg-top: 34 47% 82%;
-    --background-svg-middle: 34 47% 90%;
+    --background-svg-top: 153, 22%, 69%;
+    --background-svg-middle: 169, 23%, 76%;
     --background-svg-bottom: var(--background);
 
     /* colors */
@@ -134,4 +134,9 @@ body {
     transition-timing-function: var(--theme-timing);
     transition-duration: var(--theme-duration);
   }
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
 }
