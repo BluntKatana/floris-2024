@@ -30,7 +30,7 @@ async function retrieveUserInformation(
   const ipUserInfoUrl =
     process.env.NODE_ENV === "development" || !ip
       ? "http://ip-api.com/json/"
-      : `http://ip-api.com/json/${ip}dwadwa`;
+      : `http://ip-api.com/json/${ip}`;
 
   const userInfo = await fetch(ipUserInfoUrl, {
     method: "GET",
