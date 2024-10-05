@@ -23,7 +23,7 @@ export function AboutFlorisGrid({ userCoordinates }: AboutFlorisGrid) {
           `,
       }}
     >
-      <DistanceBox userCoordinates={userCoordinates} />
+      <DistanceBox theirCoordinates={userCoordinates} />
       <BentoBox gridArea="travel">TRAVEL</BentoBox>
       <CoffeeBox />
     </div>
