@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Header } from "./components/header";
-import { ThemeProvider } from "./components/theme-provider";
+import { Header } from "@/components/header";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 const inter = localFont({
   src: [
     {
-      path: "./fonts/Inter_18pt-Medium.ttf",
+      path: "../fonts/Inter_18pt-Medium.ttf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "./fonts/Inter_24pt-Bold.ttf",
+      path: "../fonts/Inter_24pt-Bold.ttf",
       weight: "700",
       style: "normal",
     },
@@ -23,7 +23,7 @@ const inter = localFont({
 const wotfard = localFont({
   src: [
     {
-      path: "./fonts/wotfard-regular-webfont.woff2",
+      path: "../fonts/wotfard-regular-webfont.woff2",
       weight: "400",
       style: "normal",
     },

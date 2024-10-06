@@ -1,5 +1,5 @@
+import { Coordinates } from "@/app/about-floris/about-floris.constants";
 import { headers } from "next/headers";
-import { Coordinates } from "../about-floris/about-floris.constants";
 
 export type UserInfo = {
   status?: "success" | "fail";

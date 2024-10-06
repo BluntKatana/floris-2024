@@ -4,10 +4,10 @@ import { BentoBox } from "./about-floris-grid";
 export function CoffeeBox() {
   return (
     <BentoBox gridArea="coffee">
-      {COFFEES.map((coffee) => (
+      {COFFEES.map((coffee, index) => (
         <div
           className="flex items-center border border-solid size-full rounded-md px-3 py-2 border-border"
-          key={coffee.place}
+          key={index}
         >
           <div>
             <h3 className="!text-xl !m-0">{coffee.place}</h3>

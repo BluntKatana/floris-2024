@@ -2,9 +2,9 @@
 
 import { Tag } from "./tag";
 import { useState } from "react";
-import { Post } from "../post/parse-posts";
 import Link from "next/link";
-import { formatDistance, formatPublishedAt } from "../utils/date";
+import { Post } from "@/app/post/parse-posts";
+import { formatDistance, formatPublishedAt } from "@/utils/date";
 
 /**
 Potential items on the feed:

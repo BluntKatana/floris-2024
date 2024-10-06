@@ -1,5 +1,5 @@
-import { Feed } from "./components/feed";
-import { MarqueeImage } from "./components/marquee-image";
+import { Feed } from "@/components/feed";
+import { MarqueeImage } from "@/components/marquee-image";
 import { getPublicPosts } from "./post/parse-posts";
 
 export default function Home() {

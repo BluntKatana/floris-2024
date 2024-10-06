@@ -2,29 +2,26 @@ import { PropsWithChildren } from "react";
 import { DistanceBox } from "./distance-box";
 import { CoffeeBox } from "./coffee-box";
 import { Coordinates } from "./about-floris.constants";
+import { TravelBox } from "./travel-box";
 
 type GridName = "map" | "coffee" | "travel";
 
 type AboutFlorisGrid = {
   userCoordinates?: Coordinates;
+  distanceBetweenPoints?: number;
 };
 
-export function AboutFlorisGrid({ userCoordinates }: AboutFlorisGrid) {
+export function AboutFlorisGrid({
+  userCoordinates,
+  distanceBetweenPoints,
+}: AboutFlorisGrid) {
   return (
-    <div
-      className="grid w-full grid-cols-[repeat(6,1fr)] gap-4"
-      style={{
-        gridTemplateAreas: `
-              "map  map  map  map  coffee coffee"
-              "map  map  map  map  coffee coffee"
-              "map  map  map  map  coffee coffee"
-              "travel travel travel travel travel travel"
-              "travel travel travel travel travel travel"
-          `,
-      }}
-    >
-      <DistanceBox theirCoordinates={userCoordinates} />
-      <BentoBox gridArea="travel">TRAVEL</BentoBox>
+    <div className="w-full gap-6 grid-layout-about-floris">
+      <DistanceBox
+        theirCoordinates={userCoordinates}
+        distanceBetweenPoints={distanceBetweenPoints}
+      />
+      <TravelBox />
       <CoffeeBox />
     </div>
   );
@@ -36,7 +33,7 @@ export function BentoBox({
 }: PropsWithChildren<{ gridArea: GridName }>) {
   return (
     <div
-      className="flex border border-solid size-full rounded-md  p-2 border-border min-h-[200px]"
+      className="flex bg-border border border-solid size-full rounded-md  p-2 border-border min-h-[200px]"
       style={{ gridArea: gridArea }}
     >
       {children}

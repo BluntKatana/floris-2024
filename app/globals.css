@@ -134,9 +134,51 @@ body {
     transition-timing-function: var(--theme-timing);
     transition-duration: var(--theme-duration);
   }
+
+  .leaflet-dark-mode {
+    .leaflet-layer,
+    .leaflet-control-zoom-in,
+    .leaflet-control-zoom-out,
+    .leaflet-control-attribution {
+      filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+    }
+  }
 }
 
-.leaflet-container {
-  height: 100%;
-  width: 100%;
+@layer components {
+  .grid-layout-about-floris {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    grid-template-areas:
+      "map map"
+      "map map"
+      "map map"
+      "coffee coffee"
+      "coffee coffee"
+      "travel travel"
+      "travel travel";
+
+    @screen sm {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas:
+        "map map map map"
+        "map map map map"
+        "map map map map"
+        "travel travel coffee coffee"
+        "travel travel coffee coffee"
+        "travel travel coffee coffee";
+    }
+
+    @screen lg {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-areas:
+        "map map map map coffee coffee"
+        "map map map map coffee coffee"
+        "map map map map coffee coffee"
+        "travel travel travel travel travel travel"
+        "travel travel travel travel travel travel"
+        "travel travel travel travel travel travel";
+    }
+  }
 }
