@@ -25,6 +25,10 @@ body {
     --image-brightness: ;
     --image-brightness-hover: 1;
 
+    /* leaflet */
+    --leaflet-tile-filter: brightness(0.6) invert(1) contrast(3)
+      hue-rotate(200deg) saturate(0.3) brightness(0.7);
+
     /* for svgs */
     --background-svg-top: 153, 22%, 69%;
     --background-svg-middle: 169, 23%, 76%;
@@ -134,15 +138,6 @@ body {
     transition-timing-function: var(--theme-timing);
     transition-duration: var(--theme-duration);
   }
-
-  .leaflet-dark-mode {
-    .leaflet-layer,
-    .leaflet-control-zoom-in,
-    .leaflet-control-zoom-out,
-    .leaflet-control-attribution {
-      filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
-    }
-  }
 }
 
 @layer components {
@@ -165,20 +160,30 @@ body {
         "map map map map"
         "map map map map"
         "map map map map"
-        "travel travel coffee coffee"
-        "travel travel coffee coffee"
-        "travel travel coffee coffee";
+        "coffee coffee travel travel"
+        "coffee coffee travel travel"
+        "coffee coffee travel travel";
     }
 
     @screen lg {
       grid-template-columns: repeat(6, 1fr);
       grid-template-areas:
-        "map map map map coffee coffee"
-        "map map map map coffee coffee"
-        "map map map map coffee coffee"
-        "travel travel travel travel travel travel"
-        "travel travel travel travel travel travel"
-        "travel travel travel travel travel travel";
+        "map map map map travel travel"
+        "map map map map travel travel"
+        "map map map map travel travel"
+        "coffee coffee coffee coffee coffee coffee"
+        "coffee coffee coffee coffee coffee coffee"
+        "coffee coffee coffee coffee coffee coffee";
     }
   }
 }
+
+/* @media (prefers-color-scheme: dark) {
+  .leaflet-tile {
+    filter: var(--leaflet-tile-filter, none);
+  }
+
+  .leaflet-container {
+    background: #303030;
+  }
+} */

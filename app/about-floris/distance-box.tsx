@@ -34,17 +34,21 @@ export function DistanceBox({
 
   return (
     <BentoBox gridArea="map">
-      <div className="text-center flex flex-col items-center size-full">
+      <div className="text-center flex flex-col items-center size-full dark:leaflet-dark-mode">
         <div className="size-full rounded-md overflow-hidden min-h-[250px]">
           <Map
             fromCoordinates={fromCoordinates}
             toCoordinates={toCoordinates}
           />
         </div>
-        <div className="text-center pt-4 pb-2 max-w-sm">
+        <div className="text-center pt-4 pb-2 max-w-lg">
           I&apos;ve been on the move! Covered a total of{" "}
-          <strong>{distanceBetweenPoints ?? DEFAULT_DISTANCE} km</strong> in
-          2024 so far &mdash; and there&apos;s more to come!
+          <em>
+            <strong className="underline">
+              {distanceBetweenPoints ?? DEFAULT_DISTANCE} km
+            </strong>
+          </em>{" "}
+          in 2024 so far &mdash; and there&apos;s more to come!
         </div>
       </div>
     </BentoBox>

@@ -5,6 +5,8 @@ import { MapContainer, Marker, Polyline, TileLayer } from "react-leaflet";
 
 import "leaflet/dist/leaflet.css";
 import { Coordinates } from "./about-floris.constants";
+import { useTheme } from "next-themes";
+import { cn } from "@/utils/style";
 
 interface MapProps {
   fromCoordinates: Coordinates;
@@ -14,29 +16,31 @@ interface MapProps {
 const ICON_SIZE = 36;
 
 const Map = ({ fromCoordinates, toCoordinates }: MapProps) => {
+  const { theme } = useTheme();
   return (
-    <MapContainer
-      className="dark:leaflet-dark-mode"
-      center={getCenter(fromCoordinates, toCoordinates)}
-      zoom={4}
-      dragging={false}
-      touchZoom={false}
-      scrollWheelZoom={false}
-      attributionControl={false}
-      boxZoom={false}
-      keyboard={false}
-      doubleClickZoom={false}
-      zoomControl={false}
-      style={{ height: "100%", width: "100%" }}
-    >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      <Marker position={fromCoordinates} icon={houseIcon} />
-      <Marker position={toCoordinates} icon={goalIcon} />
-      <Polyline positions={[fromCoordinates, toCoordinates]} color="black" />
-    </MapContainer>
+    <div className={cn("size-full", theme === "dark" && "leaflet-dark-mode")}>
+      <MapContainer
+        center={getCenter(fromCoordinates, toCoordinates)}
+        zoom={4}
+        dragging={false}
+        touchZoom={false}
+        scrollWheelZoom={false}
+        attributionControl={false}
+        boxZoom={false}
+        keyboard={false}
+        doubleClickZoom={false}
+        zoomControl={false}
+        style={{ height: "100%", width: "100%" }}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Marker position={fromCoordinates} icon={houseIcon} />
+        <Marker position={toCoordinates} icon={goalIcon} />
+        <Polyline positions={[fromCoordinates, toCoordinates]} color="black" />
+      </MapContainer>
+    </div>
   );
 };
 

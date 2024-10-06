@@ -1,8 +1,4 @@
-type Country = {
-  name: string;
-  code: string;
-  date: string;
-};
+type Country = [name: string, code: string, emoji?: string];
 
 // 1 hello can have multiple countries
 type Hello = {
@@ -14,21 +10,54 @@ export const HELLOS: Hello[] = [
   {
     label: "Hallo",
     countries: [
-      {
-        name: "Germany",
-        code: "DE",
-        date: "2017-2018",
-      },
-      {
-        name: "Netherlands",
-        code: "NL",
-        date: "2018-2019",
-      },
-      {
-        name: "Belgium",
-        code: "BE",
-        date: "2019-2020",
-      },
+      ["Netherlands", "NL", "🇳🇱"],
+      ["Germany", "DE", "🇩🇪"],
+      ["Austria", "AT", "🇦🇹"],
+      ["Switzerland", "CH", "🇨🇭"],
+      ["Belgium", "BE", "🇧🇪"],
     ],
+  },
+  {
+    label: "Bonjour",
+    countries: [
+      ["France", "FR", "🇫🇷"],
+      ["Belgium", "BE", "🇧🇪"],
+    ],
+  },
+  {
+    label: "Hello",
+    countries: [
+      ["United Kingdom", "GB", "🇬🇧"],
+      ["Australia", "AU", "🇦🇺"],
+      ["Singapore", "SG", "🇸🇬"], // Singapore speaks English
+    ],
+  },
+  {
+    label: "Hola",
+    countries: [["Spain", "ES", "🇪🇸"]],
+  },
+  {
+    label: "Ciao",
+    countries: [["Italy", "IT", "🇮🇹"]],
+  },
+  {
+    label: "Olá",
+    countries: [["Portugal", "PT", "🇵🇹"]],
+  },
+  {
+    label: "Γειά σου", // Greek
+    countries: [["Greece", "GR", "🇬🇷"]],
+  },
+  {
+    label: "Helló",
+    countries: [["Hungary", "HU", "🇭🇺"]],
+  },
+  {
+    label: "Ahoj",
+    countries: [["Czech Republic", "CZ", "🇨🇿"]],
+  },
+  {
+    label: "Hållö", // Swedish
+    countries: [["Sweden", "SE", "🇸🇪"]],
   },
 ];
