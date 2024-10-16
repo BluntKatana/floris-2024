@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { BentoBox } from "./about-floris-grid";
-import { HELLOS } from "./travel-box.constants";
+import { getCountryCount, HELLOS } from "./travel-box.constants";
 
 /**
  * Show 'hello' in all the country languages I've been to
@@ -8,7 +8,7 @@ import { HELLOS } from "./travel-box.constants";
 export function TravelBox() {
   return (
     <BentoBox gridArea="travel">
-      <div className="text-center flex flex-col items-center size-full">
+      <div className="text-center flex flex-col items-center size-full p-2">
         <div className="size-full flex justify-center justify gap-2 flex-wrap h-fit">
           {HELLOS.map((hello) => (
             <TravelLabel hello={hello} key={hello.label}>
@@ -16,10 +16,10 @@ export function TravelBox() {
             </TravelLabel>
           ))}
         </div>
-        <div className="text-center pt-4 pb-2 max-w-sm p-2 text-balance">
-          In my travels, I&apos;ve met people from all over the world. It&apos;s
-          been a great experience to learn about different cultures and
-          languages!
+        <div className="text-center pt-4 max-w-sm text-balance">
+          I love travelling. I&apos;ve been to a total of{" "}
+          <strong>{getCountryCount()} countries</strong>, but there are still so
+          many more to explore!
         </div>
       </div>
     </BentoBox>

@@ -26,7 +26,11 @@ export function DistanceBox({
   const Map = useMemo(
     () =>
       dynamic(() => import("./map"), {
-        loading: () => <p>Loading map...</p>,
+        loading: () => (
+          <div className="size-full bg-blue-500 flex items-center justify-center">
+            <p>Loading map...</p>
+          </div>
+        ),
         ssr: false,
       }),
     []
@@ -45,10 +49,10 @@ export function DistanceBox({
           I&apos;ve been on the move! Covered a total of{" "}
           <em>
             <strong className="underline">
-              {distanceBetweenPoints ?? DEFAULT_DISTANCE} km
+              {(distanceBetweenPoints ?? DEFAULT_DISTANCE).toFixed(2)} km
             </strong>
           </em>{" "}
-          in 2024 so far &mdash; and there&apos;s more to come!
+          while running in 2024 so far &mdash; and there&apos;s more to come!
         </div>
       </div>
     </BentoBox>

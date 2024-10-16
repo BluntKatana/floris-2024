@@ -1,17 +1,16 @@
-import { StravaAthletesStats } from "./strava.constants";
+import strava from "strava-v3";
 
-export async function getStravaAthleteData() {
-  return await fetch(
-    `https://www.strava.com/api/v3/athletes/${process.env.STRAVA_ATHLETE_ID}/stats`,
-    {
-      headers: {
-        Authorization: `Bearer ${process.env.STRAVA_ACCESS_TOKEN}`,
-      },
-    }
-  )
-    .then((res) => res.json() as Promise<StravaAthletesStats>)
-    .catch((err) => {
-      console.error(err);
-      return null;
-    });
+// configure strava
+strava.config({
+  access_token: process.env.STRAVA_ACCESS_TOKEN!,
+  client_id: process.env.STRAVA_CLIENT_ID!,
+  client_secret: process.env.STRAVA_CLIENT_SECRET!,
+  redirect_uri: process.env.STRAVA_REDIRECT_URI!,
+});
+
+// get strava stats
+export async function getStravaStats() {
+  return await strava.athletes.stats({
+    id: process.env.STRAVA_ATHLETE_ID!,
+  });
 }

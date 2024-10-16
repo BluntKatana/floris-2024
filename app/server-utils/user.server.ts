@@ -18,7 +18,7 @@ async function retrieveUserIp() {
 
   const forwardedFor = headers().get("x-forwarded-for");
   if (!ip && forwardedFor) {
-    ip = forwardedFor?.split(",").at(0) ?? "Unknown";
+    ip = forwardedFor?.split(",").at(0) ?? null;
   }
 
   return ip;
@@ -49,7 +49,14 @@ export async function getUserInformation() {
   const ip = await retrieveUserIp();
   const userinfo = await retrieveUserInformation(ip);
 
-  return userinfo;
+  if (userinfo === "unknown") {
+    return null;
+  }
+
+  return {
+    ...userinfo,
+    coords: getUserCoords(userinfo),
+  };
 }
 
 export function getUserCoords(

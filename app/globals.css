@@ -22,12 +22,8 @@ body {
     --theme-duration: 500ms;
     --theme-timing: cubic-bezier(0.41, 0.1, 0.13, 1);
 
-    --image-brightness: ;
+    --image-brightness: 0.9;
     --image-brightness-hover: 1;
-
-    /* leaflet */
-    --leaflet-tile-filter: brightness(0.6) invert(1) contrast(3)
-      hue-rotate(200deg) saturate(0.3) brightness(0.7);
 
     /* for svgs */
     --background-svg-top: 153, 22%, 69%;
@@ -171,19 +167,9 @@ body {
         "map map map map travel travel"
         "map map map map travel travel"
         "map map map map travel travel"
-        "coffee coffee coffee coffee coffee coffee"
-        "coffee coffee coffee coffee coffee coffee"
-        "coffee coffee coffee coffee coffee coffee";
+        "coffee coffee coffee random random random"
+        "coffee coffee coffee random random random"
+        "coffee coffee coffee random random random";
     }
   }
 }
-
-/* @media (prefers-color-scheme: dark) {
-  .leaflet-tile {
-    filter: var(--leaflet-tile-filter, none);
-  }
-
-  .leaflet-container {
-    background: #303030;
-  }
-} */

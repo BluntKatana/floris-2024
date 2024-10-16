@@ -19,17 +19,13 @@ export const HELLOS: Hello[] = [
   },
   {
     label: "Bonjour",
-    countries: [
-      ["France", "FR", "🇫🇷"],
-      ["Belgium", "BE", "🇧🇪"],
-    ],
+    countries: [["France", "FR", "🇫🇷"]],
   },
   {
     label: "Hello",
     countries: [
       ["United Kingdom", "GB", "🇬🇧"],
       ["Australia", "AU", "🇦🇺"],
-      ["Singapore", "SG", "🇸🇬"], // Singapore speaks English
     ],
   },
   {
@@ -60,4 +56,12 @@ export const HELLOS: Hello[] = [
     label: "Hållö", // Swedish
     countries: [["Sweden", "SE", "🇸🇪"]],
   },
+  {
+    label: "你好",
+    countries: [["Singapore", "SG", "🇸🇬"]],
+  },
 ];
+
+export function getCountryCount() {
+  return HELLOS.reduce((acc, hello) => acc + hello.countries.length, 0);
+}
