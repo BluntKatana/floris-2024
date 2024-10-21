@@ -25,6 +25,8 @@ body {
     --image-brightness: 0.9;
     --image-brightness-hover: 1;
 
+    --distancemap: 192, 45%, 77%;
+
     /* for svgs */
     --background-svg-top: 153, 22%, 69%;
     --background-svg-middle: 169, 23%, 76%;

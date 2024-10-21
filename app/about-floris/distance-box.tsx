@@ -27,8 +27,8 @@ export function DistanceBox({
     () =>
       dynamic(() => import("./map"), {
         loading: () => (
-          <div className="size-full bg-blue-500 flex items-center justify-center">
-            <p>Loading map...</p>
+          <div className="size-full bg-distancemap flex items-center justify-center text-black">
+            Measuring distance...
           </div>
         ),
         ssr: false,

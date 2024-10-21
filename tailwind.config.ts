@@ -37,6 +37,9 @@ const config: Config = {
         },
 
         /* other */
+        distancemap: {
+          DEFAULT: "hsl(var(--distancemap))",
+        },
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",

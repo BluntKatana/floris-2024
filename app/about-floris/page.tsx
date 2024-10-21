@@ -1,7 +1,6 @@
 import { getUserInformation } from "@/app/server-utils/user.server";
 import MdxLayout from "@/components/mdx";
 import { MDXLink } from "@/components/mdx/mdx-link";
-import { getStravaStats } from "@/utils/strava.server";
 import Image from "next/image";
 import {
   GsAvatar,
@@ -69,10 +68,7 @@ export default async function AboutFloris() {
       <div className="mt-6">
         <AboutFlorisGrid
           userCoordinates={userinfo?.coords}
-          distanceBetweenPoints={
-            1000
-            // stravaStats ? stravaStats.ytd_run_totals.distance / 1000 : undefined
-          }
+          distanceBetweenPoints={1000} // stravaStats ? stravaStats.ytd_run_totals.distance / 1000 : undefined
         />
       </div>
     </section>
