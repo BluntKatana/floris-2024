@@ -7,7 +7,7 @@ import { TravelBox } from "./travel-box";
 type GridName = "map" | "coffee" | "travel";
 
 type AboutFlorisGrid = {
-  userCoordinates?: Coordinates;
+  userCoordinates: Coordinates | null;
   distanceBetweenPoints?: number;
 };
 

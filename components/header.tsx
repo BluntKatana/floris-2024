@@ -1,6 +1,6 @@
+import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import { ThemeToggle } from "./theme-toggle";
-import { Rss } from "lucide-react";
 
 export function Header() {
   return (
@@ -33,15 +33,35 @@ export function Header() {
                 </Link> */}
               </div>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="items-center gap-4 hidden md:flex">
               <ThemeToggle />
               <Link
+                href="emailto:florisbos@gmail.com"
+                className="size-10 grid place-items-center"
+              >
+                <Mail className="size-5" />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/floris-bos/"
+                target="_blank"
+                className="size-10 grid place-items-center"
+              >
+                <Linkedin className="size-5" />
+              </Link>
+              <Link
+                href="https://github.com/BluntKatana"
+                target="_blank"
+                className="size-10 grid place-items-center"
+              >
+                <Github className="size-5" />
+              </Link>
+              {/* <Link
                 href="/rss"
                 target="_blank"
                 className="size-10 grid place-items-center"
               >
                 <Rss className="size-5" />
-              </Link>
+              </Link> */}
             </div>
           </header>
         </div>

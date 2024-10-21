@@ -7,7 +7,7 @@ import { BentoBox } from "./about-floris-grid";
 import { Coordinates, MY_COORDINATES } from "./about-floris.constants";
 
 type DistanceBoxProps = {
-  theirCoordinates?: Coordinates;
+  theirCoordinates: Coordinates | null;
   distanceBetweenPoints?: number;
 };
 

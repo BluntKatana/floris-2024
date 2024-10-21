@@ -8,6 +8,9 @@ import { baseUrl } from "@/app/sitemap";
 export async function generateStaticParams() {
   const posts = getPublicPosts();
 
+  // TMEP: update this when implementing projects and thoughts sections
+  return [];
+
   return posts.map((post) => ({
     slug: post.slug,
   }));

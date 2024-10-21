@@ -9,8 +9,8 @@ import MdxLayout from "@/components/mdx";
 import { MDXLink } from "@/components/mdx/mdx-link";
 // import { getPublicPosts } from "./post/parse-posts";
 import Image from "next/image";
-import { AboutFlorisGrid } from "./about-floris/about-floris-grid";
 import { getUserInformation } from "./server-utils/user.server";
+import { AboutFlorisGrid } from "@/components/about-grid/about-floris-grid";
 
 export default async function Home() {
   const userinfo = await getUserInformation();
@@ -74,8 +74,8 @@ export default async function Home() {
       <section className="section">
         <div className="mt-6">
           <AboutFlorisGrid
-            userCoordinates={userinfo?.coords}
-            distanceBetweenPoints={1000} // stravaStats ? stravaStats.ytd_run_totals.distance / 1000 : undefined
+            userCoordinates={userinfo?.coords ?? null}
+            distanceBetweenPoints={1041.1} // stravaStats ? stravaStats.ytd_run_totals.distance / 1000 : undefined
           />
         </div>
       </section>

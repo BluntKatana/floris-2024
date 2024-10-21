@@ -1,4 +1,4 @@
-import { Coordinates } from "@/app/about-floris/about-floris.constants";
+import { Coordinates } from "@/components/about-grid/about-floris.constants";
 
 /**
  * Generate a random latitude and longitude within a

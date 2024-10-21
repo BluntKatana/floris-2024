@@ -44,6 +44,8 @@ function getMDXData(dir: string) {
 export function getPublicPosts() {
   const posts = getMDXData(path.join(process.cwd(), "app", "post"));
 
+  // TEMP: Update this when implementing projects and thoughts sections
+  return [];
   return posts.filter((post) => post.metadata.public);
 }
 

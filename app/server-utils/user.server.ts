@@ -1,4 +1,4 @@
-import { Coordinates } from "@/app/about-floris/about-floris.constants";
+import { Coordinates } from "@/components/about-grid/about-floris.constants";
 import { headers } from "next/headers";
 
 export type UserInfo = {
@@ -61,13 +61,13 @@ export async function getUserInformation() {
 
 export function getUserCoords(
   userinfo: UserInfo | "unknown"
-): Coordinates | undefined {
+): Coordinates | null {
   if (userinfo === "unknown") {
-    return undefined;
+    return null;
   }
 
   if (userinfo.lat === undefined || userinfo.lon === undefined) {
-    return undefined;
+    return null;
   }
 
   return [userinfo.lat, userinfo.lon];
