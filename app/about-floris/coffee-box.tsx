@@ -36,7 +36,7 @@ export function CoffeeBox() {
           ))}
         </div>
         <div className="text-center pt-4 max-w-sm text-balance">
-          Tracking my everyday life through coffee.
+          You can often find me working in coffee shops.
         </div>
       </div>
     </BentoBox>

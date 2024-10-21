@@ -121,7 +121,7 @@ body {
   }
 
   .section {
-    @apply max-w-5xl mx-auto px-8 w-full;
+    @apply max-w-4xl mx-auto px-8 w-full;
   }
 }
 

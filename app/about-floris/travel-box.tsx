@@ -17,8 +17,8 @@ export function TravelBox() {
           ))}
         </div>
         <div className="text-center pt-4 max-w-sm text-balance">
-          I love travelling. I&apos;ve been to a total of{" "}
-          <strong>{getCountryCount()} countries</strong>, but there are still so
+          I love travelling. I&apos;ve been to{" "}
+          <strong>{getCountryCount()} countries</strong>, and there are still so
           many more to explore!
         </div>
       </div>

@@ -52,7 +52,8 @@ export function DistanceBox({
               {(distanceBetweenPoints ?? DEFAULT_DISTANCE).toFixed(2)} km
             </strong>
           </em>{" "}
-          while running in 2024 so far &mdash; and there&apos;s more to come!
+          while 🏊🏼, 🚴🏼‍♂️, and 🏃🏼‍♂️ in 2024 so far &mdash; and there&apos;s more to
+          come!
         </div>
       </div>
     </BentoBox>
