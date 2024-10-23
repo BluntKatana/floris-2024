@@ -2,7 +2,7 @@
 
 import { Github, Linkedin, Mail, MenuIcon, X } from "lucide-react";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ThemeToggle } from "../theme/theme-toggle";
 import { cn } from "@/utils/style";
 import useBoundingBox from "@/hooks/use-bounding-box";
@@ -17,12 +17,14 @@ export function Header() {
     ? containerBox.height + containerBox.top
     : 0;
 
-  // disable scroll if menu is open
-  if (menuOpen) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "auto";
-  }
+  useEffect(() => {
+    // disable scroll if menu is open
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [menuOpen]);
 
   console.log(containerBox);
 
