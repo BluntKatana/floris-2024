@@ -5,12 +5,12 @@ import {
   UvaLogo,
   VuSocialAvatarBlauw,
 } from "@/assets/svg";
-import MdxLayout from "@/components/mdx";
-import { MDXLink } from "@/components/mdx/mdx-link";
+import MdxLayout from "@/app/_components/mdx";
+import { MDXLink } from "@/app/_components/mdx/mdx-link";
 // import { getPublicPosts } from "./post/parse-posts";
 import Image from "next/image";
 import { getUserInformation } from "./server-utils/user.server";
-import { AboutFlorisGrid } from "@/components/about-grid/about-floris-grid";
+import { AboutFlorisGrid } from "@/app/_features/about-grid/about-floris-grid";
 
 export default async function Home() {
   const userinfo = await getUserInformation();

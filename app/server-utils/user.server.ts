@@ -1,4 +1,4 @@
-import { Coordinates } from "@/components/about-grid/about-floris.constants";
+import { Coordinates } from "@/app/_features/about-grid/about-floris.constants";
 import { headers } from "next/headers";
 
 export type UserInfo = {

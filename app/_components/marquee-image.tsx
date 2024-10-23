@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { cn } from "../utils/style";
+import { cn } from "../../utils/style";
 
 interface MarqueeImageProps {
   src: string;

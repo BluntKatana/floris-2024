@@ -1,4 +1,4 @@
-import { CustomMDX } from "@/components/mdx";
+import { CustomMDX } from "@/app/_components/mdx";
 import { notFound } from "next/navigation";
 import { Metadata } from "next/types";
 import { getPublicPosts } from "../parse-posts";

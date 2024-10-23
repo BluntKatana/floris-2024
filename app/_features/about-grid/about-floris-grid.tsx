@@ -1,8 +1,8 @@
 import { PropsWithChildren } from "react";
-import { DistanceBox } from "./distance-box";
-import { CoffeeBox } from "./coffee-box";
 import { Coordinates } from "./about-floris.constants";
+import { DistanceBox } from "./distance-box";
 import { TravelBox } from "./travel-box";
+import { CoffeeBox } from "./coffee-box";
 
 type GridName = "map" | "coffee" | "travel";
 

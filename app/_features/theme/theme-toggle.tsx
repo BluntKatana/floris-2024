@@ -1,14 +1,12 @@
 "use client";
 
+import useIsMounted from "@/hooks/use-is-mounted";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 export function ThemeToggle() {
-  const [mounted, setMounted] = useState(false);
   const { setTheme, theme } = useTheme();
-
-  useEffect(() => setMounted(true), []);
+  const mounted = useIsMounted();
 
   if (!mounted) return null;
 
