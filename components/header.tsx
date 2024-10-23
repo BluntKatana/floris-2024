@@ -4,8 +4,9 @@ import { ThemeToggle } from "./theme-toggle";
 
 export function Header() {
   return (
-    <div className="mt-12 sticky top-0 left-0 right-0 w-full z-[1000] backdrop-blur-sm">
-      <div className="section">
+    <div className="mt-12 sticky top-0 left-0 right-0 w-full z-[1000] overflow-hidden">
+      <div className="absolute  inset-0 size-full h-[calc(100%+100px)] backdrop-blur-md z-[999]"></div>
+      <div className="section z-[1001] relative">
         <div className="h-[80px] w-full flex items-end">
           <header className="w-full flex h-[48px] items-center justify-between gap-1">
             <div className="gap-12 flex items-center">
@@ -19,18 +20,18 @@ export function Header() {
                 >
                   <span>About</span>
                 </Link> */}
-                {/* <Link
-                  href="/resume"
+                <Link
+                  href="/projects"
                   className="px-4 h-12 flex flex-col justify-center"
                 >
-                  <span>Resume</span>
-                </Link> */}
-                {/* <Link
+                  <span>Projects</span>
+                </Link>
+                <Link
                   href="/thoughts"
                   className="px-4 h-12 flex flex-col justify-center"
                 >
                   <span>Thoughts</span>
-                </Link> */}
+                </Link>
               </div>
             </div>
             <div className="items-center gap-4 hidden md:flex">
