@@ -1,13 +1,13 @@
-import * as React from "react";
+import { useEffect, useState } from "react";
 
 const useBoundingBox = (
   ref: React.RefObject<HTMLElement | SVGSVGElement>,
   scrollDebounce = 80,
   resizeThrottle = 60
 ): DOMRect | null => {
-  const [box, setBox] = React.useState<DOMRect | null>(null);
+  const [box, setBox] = useState<DOMRect | null>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     // NOTE: This will happen if the element is conditionally rendered and NOT part of the initial render. A better version of this hook should somehow handle this case. For now, the hook just doesn't work (I think?).
     if (!ref.current) {
       return;
@@ -29,13 +29,14 @@ const useBoundingBox = (
         setBox(getAugmentedBox(newBox));
       }
     }
-
-    const handleScroll = scrollDebounce
-      ? debounce(update, scrollDebounce)
-      : update;
-    const handleResize = resizeThrottle
-      ? throttle(update, resizeThrottle)
-      : update;
+    const handleScroll = update;
+    const handleResize = update;
+    // const handleScroll = scrollDebounce
+    //   ? debounce(update, scrollDebounce)
+    //   : update;
+    // const handleResize = resizeThrottle
+    //   ? throttle(update, resizeThrottle)
+    //   : update;
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
@@ -83,31 +84,31 @@ function getAugmentedBox(box: DOMRect | null): DOMRect | null {
 
 export default useBoundingBox;
 
-const debounce = (callback: Function, wait: number) => {
-  let timeoutId: number;
-  return (...args: any) => {
-    window.clearTimeout(timeoutId);
-    timeoutId = window.setTimeout(() => {
-      callback.apply(null, args);
-    }, wait);
-  };
-};
+// const debounce = (callback: Function, wait: number) => {
+//   let timeoutId: number;
+//   return (...args: any) => {
+//     window.clearTimeout(timeoutId);
+//     timeoutId = window.setTimeout(() => {
+//       callback.apply(null, args);
+//     }, wait);
+//   };
+// };
 
-function throttle(func: Function, limit: number) {
-  let lastFunc: Timeout;
-  let lastRan: number;
-  return function (...args: any) {
-    if (!lastRan) {
-      func.apply(null, args);
-      lastRan = Date.now();
-    } else {
-      clearTimeout(lastFunc);
-      lastFunc = setTimeout(function () {
-        if (Date.now() - lastRan >= limit) {
-          func.apply(null, args);
-          lastRan = Date.now();
-        }
-      }, limit - (Date.now() - lastRan));
-    }
-  };
-}
+// function throttle(func: Function, limit: number) {
+//   let lastFunc: Timeout;
+//   let lastRan: number;
+//   return function (...args: any) {
+//     if (!lastRan) {
+//       func.apply(null, args);
+//       lastRan = Date.now();
+//     } else {
+//       clearTimeout(lastFunc);
+//       lastFunc = setTimeout(function () {
+//         if (Date.now() - lastRan >= limit) {
+//           func.apply(null, args);
+//           lastRan = Date.now();
+//         }
+//       }, limit - (Date.now() - lastRan));
+//     }
+//   };
+// }
