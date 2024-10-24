@@ -34,6 +34,10 @@ async function retrieveUserInformation(
 
   const userInfo = await fetch(ipUserInfoUrl, {
     method: "GET",
+    // cache it for 1 day
+    headers: {
+      "Cache-Control": "max-age=86400",
+    },
   })
     .then((res) => res.json())
     .then((res) => res)

@@ -33,7 +33,23 @@ const wotfard = localFont({
 
 export const metadata: Metadata = {
   title: "Floris Bos",
-  description: "Personal website of Floris Bos",
+  description:
+    "Floris Bos is a full-stack developer and master student Computer Science at the VU and UVA. He likes building cool things with code, do sports, go on travels, and sit in cafes staring at his laptop for hours.",
+  openGraph: {
+    images: {
+      url: "https://florisbos.com/assets/images/homepage_1.jpg",
+      alt: "Floris Bos",
+    },
+  },
+  authors: [{ name: "Floris Bos", url: "https://florisbos.com" }],
+  creator: "Floris Bos",
+  keywords: [
+    "Floris Bos",
+    "full-stack developer",
+    "master student Computer Science",
+    "Netherlands",
+    "portfolio",
+  ],
 };
 
 export default function RootLayout({

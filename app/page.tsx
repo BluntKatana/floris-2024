@@ -1,3 +1,5 @@
+import MdxLayout from "@/app/_components/mdx";
+import { MDXLink } from "@/app/_components/mdx/mdx-link";
 import {
   GsAvatar,
   JojoschoolFavicon,
@@ -5,12 +7,10 @@ import {
   UvaLogo,
   VuSocialAvatarBlauw,
 } from "@/assets/svg";
-import MdxLayout from "@/app/_components/mdx";
-import { MDXLink } from "@/app/_components/mdx/mdx-link";
 // import { getPublicPosts } from "./post/parse-posts";
+import { AboutFlorisGrid } from "@/app/_features/about-grid/about-floris-grid";
 import Image from "next/image";
 import { getUserInformation } from "./server-utils/user.server";
-import { AboutFlorisGrid } from "@/app/_features/about-grid/about-floris-grid";
 
 export default async function Home() {
   const userinfo = await getUserInformation();
