@@ -84,24 +84,24 @@ export function Header() {
               {menuOpen && (
                 <div
                   className="size-full absolute top-full w-full left-0 bg-background backdrop-blur-md section"
-                  style={{ height: `calc(100vh - ${headerHeight ?? 0}px)` }}
+                  style={{ height: `calc(100dvh - ${headerHeight ?? 0}px)` }}
                 >
                   <div className="size-full flex justify-between flex-col py-12">
                     <div className="flex flex-col gap-4">
                       <Link
                         href="/projects"
-                        className="h-12 text-xl flex flex-col"
+                        className="h-12 text-xl flex items-center w-full"
                       >
                         <span>Projects</span>
                       </Link>
                       <Link
                         href="/thoughts"
-                        className="h-12 text-xl flex flex-col"
+                        className="h-12 text-xl flex items-center w-full"
                       >
                         <span>Thoughts</span>
                       </Link>
                     </div>
-                    <div className="flex gap-4">
+                    <div className="flex gap-4 rounded-md bg-card p-2 mb-12">
                       <Link
                         href="emailto:florisbos@gmail.com"
                         className="size-10 grid place-items-center"

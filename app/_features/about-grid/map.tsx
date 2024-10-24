@@ -16,9 +16,8 @@ interface MapProps {
 const ICON_SIZE = 36;
 
 const Map = ({ fromCoordinates, toCoordinates }: MapProps) => {
-  return null;
-
   const { theme } = useTheme();
+
   return (
     <div className={cn("size-full", theme === "dark" && "leaflet-dark-mode")}>
       <MapContainer

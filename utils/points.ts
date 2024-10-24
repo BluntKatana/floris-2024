@@ -15,7 +15,6 @@ export function generateRandomCoordinates(
   maxdist: number
 ): Coordinates {
   const [startlat, startlong] = startCoordinates;
-  console.log(startlat, startlong);
 
   const startLatRad = (startlat * Math.PI) / 180;
   const startLongRad = (startlong * Math.PI) / 180;
