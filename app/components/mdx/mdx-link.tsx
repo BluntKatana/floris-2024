@@ -1,4 +1,4 @@
-import { cn } from "@/utils/style";
+import { cn } from "@/app/utils/style";
 import Link from "next/link";
 import { ComponentProps, ReactNode } from "react";
 

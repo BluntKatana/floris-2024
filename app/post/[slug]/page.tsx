@@ -2,7 +2,7 @@ import { CustomMDX } from "@/app/_components/mdx";
 import { notFound } from "next/navigation";
 import { Metadata } from "next/types";
 import { getPublicPosts } from "../parse-posts";
-import { formatDistance, formatPublishedAt } from "@/utils/date";
+import { formatDistance, formatPublishedAt } from "@/app/utils/date";
 import { baseUrl } from "@/app/sitemap";
 
 export async function generateStaticParams() {

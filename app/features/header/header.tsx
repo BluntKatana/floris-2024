@@ -1,11 +1,19 @@
 "use client";
 
-import { Github, Linkedin, Mail, MenuIcon, X } from "lucide-react";
+import useBoundingBox from "@/app/hooks/use-bounding-box";
+import { cn } from "@/app/utils/style";
+import {
+  Github,
+  Lightbulb,
+  Linkedin,
+  Mail,
+  MenuIcon,
+  Workflow,
+  X,
+} from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ThemeToggle } from "../theme/theme-toggle";
-import { cn } from "@/utils/style";
-import useBoundingBox from "@/hooks/use-bounding-box";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -83,25 +91,31 @@ export function Header() {
               </div>
               {menuOpen && (
                 <div
-                  className="size-full absolute top-full w-full left-0 bg-background backdrop-blur-md section"
+                  className="size-full absolute top-full w-full left-0 bg-background backdrop-blur-md"
                   style={{ height: `calc(100dvh - ${headerHeight ?? 0}px)` }}
                 >
-                  <div className="size-full flex justify-between flex-col py-12">
+                  <div className="section size-full flex justify-between flex-col pt-12 pb-16 rounded-md">
                     <div className="flex flex-col gap-4">
                       <Link
                         href="/projects"
-                        className="h-12 text-xl flex items-center w-full"
+                        className="h-12 text-xl flex items-center w-full gap-4"
                       >
+                        <span>
+                          <Workflow className="size-5" />
+                        </span>
                         <span>Projects</span>
                       </Link>
                       <Link
                         href="/thoughts"
-                        className="h-12 text-xl flex items-center w-full"
+                        className="h-12 text-xl flex items-center w-full gap-4"
                       >
+                        <span>
+                          <Lightbulb className="size-5" />
+                        </span>
                         <span>Thoughts</span>
                       </Link>
                     </div>
-                    <div className="flex gap-4 rounded-md bg-card p-2 mb-12">
+                    <div className="flex gap-4 rounded-md bg-card p-2">
                       <Link
                         href="emailto:florisbos@gmail.com"
                         className="size-10 grid place-items-center"

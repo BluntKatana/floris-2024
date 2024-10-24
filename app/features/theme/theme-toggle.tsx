@@ -1,6 +1,6 @@
 "use client";
 
-import useIsMounted from "@/hooks/use-is-mounted";
+import useIsMounted from "@/app/hooks/use-is-mounted";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 

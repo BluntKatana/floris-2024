@@ -1,6 +1,6 @@
 "use client";
 
-import { generateRandomCoordinates } from "@/utils/points";
+import { generateRandomCoordinates } from "@/app/utils/points";
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
 import { BentoBox } from "./about-floris-grid";

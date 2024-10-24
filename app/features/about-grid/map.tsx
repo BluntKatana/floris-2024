@@ -6,7 +6,7 @@ import { MapContainer, Marker, Polyline, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { Coordinates } from "./about-floris.constants";
 import { useTheme } from "next-themes";
-import { cn } from "@/utils/style";
+import { cn } from "@/app/utils/style";
 
 interface MapProps {
   fromCoordinates: Coordinates;

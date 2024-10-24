@@ -4,7 +4,7 @@ import { Tag } from "./tag";
 import { useState } from "react";
 import Link from "next/link";
 import { Post } from "@/app/post/parse-posts";
-import { formatDistance, formatPublishedAt } from "@/utils/date";
+import { formatDistance, formatPublishedAt } from "@/app/utils/date";
 
 /**
 Potential items on the feed:

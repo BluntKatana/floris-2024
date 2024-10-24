@@ -1,5 +1,5 @@
-import MdxLayout from "@/app/_components/mdx";
-import { MDXLink } from "@/app/_components/mdx/mdx-link";
+import MdxLayout from "@/app/components/mdx";
+import { MDXLink } from "@/app/components/mdx/mdx-link";
 import {
   GsAvatar,
   JojoschoolFavicon,
@@ -8,7 +8,7 @@ import {
   VuSocialAvatarBlauw,
 } from "@/assets/svg";
 // import { getPublicPosts } from "./post/parse-posts";
-import { AboutFlorisGrid } from "@/app/_features/about-grid/about-floris-grid";
+import { AboutFlorisGrid } from "@/app/features/about-grid/about-floris-grid";
 import Image from "next/image";
 import { getUserInformation } from "./server-utils/user.server";
 
@@ -18,7 +18,7 @@ export default async function Home() {
   return (
     <main className="pb-16">
       <section className="section">
-        <div className="mt-9 grid-cols-1 grid md:grid-cols-[1fr_300px] md:gap-6">
+        <div className="mt-9 flex flex-col-reverse md:grid md:grid-cols-[1fr_300px] md:gap-6">
           <div>
             <MdxLayout>
               <h1>Hi, I am Floris Bos</h1>
@@ -60,12 +60,12 @@ export default async function Home() {
               </p>
             </MdxLayout>
           </div>
-          <div className="relative size-full rounded-md overflow-hidden">
+          <div className="relative size-full rounded-md overflow-hidden min-h-[200px]">
             <Image
               src="/assets/images/homepage_1.jpg"
               alt="Floris Bos"
               fill
-              className="object-cover object-bottom"
+              className="object-cover object-center md:object-bottom"
               priority
             />
           </div>
