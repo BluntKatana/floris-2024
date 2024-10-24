@@ -1,14 +1,14 @@
-import { CustomMDX } from "@/app/_components/mdx";
 import { notFound } from "next/navigation";
 import { Metadata } from "next/types";
 import { getPublicPosts } from "../parse-posts";
 import { formatDistance, formatPublishedAt } from "@/app/utils/date";
 import { baseUrl } from "@/app/sitemap";
+import { CustomMDX } from "@/app/components/mdx";
 
 export async function generateStaticParams() {
   const posts = getPublicPosts();
 
-  // TMEP: update this when implementing projects and thoughts sections
+  // TEMP: update this when implementing projects and thoughts sections
   return [];
 
   return posts.map((post) => ({

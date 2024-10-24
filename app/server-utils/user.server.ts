@@ -1,5 +1,5 @@
-import { Coordinates } from "@/app/_features/about-grid/about-floris.constants";
 import { headers } from "next/headers";
+import { Coordinates } from "../features/about-grid/about-floris.constants";
 
 export type UserInfo = {
   status?: "success" | "fail";

@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { useSpring } from "react-spring";
 import usePrefersReducedMotion from "@/app/hooks/use-prefers-reduced-motion";
+import { useCallback, useEffect, useState } from "react";
+import { useSpring } from "react-spring";
 
 // UPDATE this path to your copy of the hook!
 // Source here: https://joshwcomeau.com/snippets/react-hooks/use-prefers-reduced-motion
