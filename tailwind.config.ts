@@ -43,6 +43,7 @@ const config: Config = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+          border: "hsl(var(--card-border) / .25)",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",

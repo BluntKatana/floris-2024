@@ -33,9 +33,10 @@ body {
     --background-svg-bottom: var(--background);
 
     /* colors */
-    --background: 34 47% 97%;
+    --background: 48, 25%, 92%;
     --foreground: 0 0% 13%;
-    --card: 34 47% 85%;
+    --card: 51 27% 90%;
+    --card-border: 48 12.5% 39.2%;
     --header-section: 142 76% 36%; /* text-green-600 */
 
     --tag-1: 211, 96%, 78%; /* blue-300 */
@@ -85,9 +86,10 @@ body {
     --image-brightness-hover: 0.8;
 
     /* colors */
-    --background: 0 0% 13%;
+    --background: 45 4.9% 16.1%;
     --foreground: 0 0% 98%;
-    --card: 0 0% 25%;
+    --card: 45, 5%, 14%;
+    --card-border: 50 5.9% 40%;
     --header-section: 142 71% 45%; /* green-500 */
 
     --tag-1: 218 91% 60%; /* blue-500 */
@@ -147,19 +149,18 @@ body {
       "map map"
       "map map"
       "coffee coffee"
-      "coffee coffee"
-      "travel travel"
-      "travel travel";
-
+      "coffee coffee";
+    /* "travel travel" */
+    /* "travel travel"; */
     @screen sm {
       grid-template-columns: repeat(4, 1fr);
       grid-template-areas:
         "map map map map"
         "map map map map"
-        "map map map map"
+        "map map map map";
+      /* "coffee coffee travel travel"
         "coffee coffee travel travel"
-        "coffee coffee travel travel"
-        "coffee coffee travel travel";
+        "coffee coffee travel travel"; */
     }
 
     @screen lg {
@@ -167,10 +168,10 @@ body {
       grid-template-areas:
         "map map map map travel travel"
         "map map map map travel travel"
-        "map map map map travel travel"
+        "map map map map travel travel";
+      /* "coffee coffee coffee random random random"
         "coffee coffee coffee random random random"
-        "coffee coffee coffee random random random"
-        "coffee coffee coffee random random random";
+        "coffee coffee coffee random random random"; */
     }
   }
 }

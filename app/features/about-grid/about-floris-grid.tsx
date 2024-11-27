@@ -1,14 +1,14 @@
+import { Card } from "@/app/components/card";
 import { PropsWithChildren } from "react";
 import { Coordinates } from "./about-floris.constants";
 import { DistanceBox } from "./distance-box";
 import { TravelBox } from "./travel-box";
-import { CoffeeBox } from "./coffee-box";
 
 type GridName = "map" | "coffee" | "travel";
 
 type AboutFlorisGrid = {
   userCoordinates: Coordinates | null;
-  distanceBetweenPoints?: number;
+  distanceBetweenPoints: number;
 };
 
 export function AboutFlorisGrid({
@@ -22,7 +22,7 @@ export function AboutFlorisGrid({
         distanceBetweenPoints={distanceBetweenPoints}
       />
       <TravelBox />
-      <CoffeeBox />
+      {/* <CoffeeBox /> */}
     </div>
   );
 }
@@ -32,11 +32,11 @@ export function BentoBox({
   gridArea,
 }: PropsWithChildren<{ gridArea: GridName }>) {
   return (
-    <div
-      className="flex bg-card size-full rounded-md p-2 min-h-[200px] text-lg"
+    <Card
+      className="flex size-full p-2 min-h-[200px] text-lg"
       style={{ gridArea: gridArea }}
     >
       {children}
-    </div>
+    </Card>
   );
 }

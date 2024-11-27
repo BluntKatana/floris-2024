@@ -34,8 +34,6 @@ export function Header() {
     }
   }, [menuOpen]);
 
-  console.log(containerBox);
-
   return (
     <div
       ref={containerRef}

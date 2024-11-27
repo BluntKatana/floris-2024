@@ -2,13 +2,13 @@
 
 import { generateRandomCoordinates } from "@/app/utils/points";
 import dynamic from "next/dynamic";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { BentoBox } from "./about-floris-grid";
 import { Coordinates, MY_COORDINATES } from "./about-floris.constants";
 
 type DistanceBoxProps = {
   theirCoordinates: Coordinates | null;
-  distanceBetweenPoints?: number;
+  distanceBetweenPoints: number;
 };
 
 const DEFAULT_DISTANCE = 1000;
@@ -17,11 +17,17 @@ export function DistanceBox({
   theirCoordinates,
   distanceBetweenPoints,
 }: DistanceBoxProps) {
-  const fromCoordinates = theirCoordinates ?? MY_COORDINATES;
-  const toCoordinates = generateRandomCoordinates(
-    fromCoordinates,
-    distanceBetweenPoints ?? DEFAULT_DISTANCE
+  const [otherCoordinates, setOtherCoordinates] = useState<Coordinates | null>(
+    null
   );
+
+  const fromCoordinates = theirCoordinates ?? MY_COORDINATES;
+
+  if (otherCoordinates === null) {
+    setOtherCoordinates(
+      generateRandomCoordinates(fromCoordinates, distanceBetweenPoints)
+    );
+  }
 
   const Map = useMemo(
     () =>
@@ -40,10 +46,12 @@ export function DistanceBox({
     <BentoBox gridArea="map">
       <div className="text-center flex flex-col items-center size-full dark:leaflet-dark-mode">
         <div className="size-full rounded-md overflow-hidden min-h-[250px]">
-          <Map
-            fromCoordinates={fromCoordinates}
-            toCoordinates={toCoordinates}
-          />
+          {otherCoordinates !== null && (
+            <Map
+              fromCoordinates={fromCoordinates}
+              toCoordinates={otherCoordinates}
+            />
+          )}
         </div>
         <div className="text-center pt-4 pb-2 max-w-lg">
           I&apos;ve been on the move! Covered a total of{" "}

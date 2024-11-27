@@ -75,7 +75,7 @@ export default async function Home() {
         <div className="mt-6">
           <AboutFlorisGrid
             userCoordinates={userinfo?.coords ?? null}
-            distanceBetweenPoints={1041.1} // stravaStats ? stravaStats.ytd_run_totals.distance / 1000 : undefined
+            distanceBetweenPoints={1134.1} // stravaStats ? stravaStats.ytd_run_totals.distance / 1000 : undefined
           />
         </div>
       </section>
