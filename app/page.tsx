@@ -11,6 +11,7 @@ import {
 import { AboutFlorisGrid } from "@/app/features/about-grid/about-floris-grid";
 import Image from "next/image";
 import { getUserInformation } from "./server-utils/user.server";
+import { Card } from "./components/card";
 
 export default async function Home() {
   const userinfo = await getUserInformation();
@@ -60,7 +61,7 @@ export default async function Home() {
               </p>
             </MdxLayout>
           </div>
-          <div className="relative size-full rounded-md overflow-hidden min-h-[200px]">
+          <Card className="relative size-full overflow-hidden min-h-[200px]">
             <Image
               src="/assets/images/homepage_1.jpg"
               alt="Floris Bos"
@@ -68,7 +69,7 @@ export default async function Home() {
               className="object-cover object-center md:object-bottom"
               priority
             />
-          </div>
+          </Card>
         </div>
       </section>
       <section className="section">
