@@ -10,9 +10,8 @@ import {
 // import { getPublicPosts } from "./post/parse-posts";
 import { AboutFlorisGrid } from "@/app/features/about-grid/about-floris-grid";
 import Image from "next/image";
-import { getUserInformation } from "./server-utils/user.server";
 import { Card } from "./components/card";
-import Link from "next/link";
+import { getUserInformation } from "./server-utils/user.server";
 
 export default async function Home() {
   const userinfo = await getUserInformation();
