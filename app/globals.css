@@ -36,6 +36,7 @@ body {
     --background: 48, 25%, 92%;
     --foreground: 0 0% 13%;
     --card: 51 27% 90%;
+    --card-foreground: 0 0% 13%;
     --card-border: 48 12.5% 39.2%;
     --header-section: 142 76% 36%; /* text-green-600 */
 
@@ -46,7 +47,6 @@ body {
 
     /* other */
     /* --card: 0 0% 100%; */
-    /* --card-foreground: 0 0% 3.9%; */
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
     --primary: 0 0% 9%;
@@ -89,6 +89,7 @@ body {
     --background: 45 4.9% 16.1%;
     --foreground: 0 0% 98%;
     --card: 45, 5%, 14%;
+    --card-foreground: 0 0% 98%;
     --card-border: 50 5.9% 40%;
     --header-section: 142 71% 45%; /* green-500 */
 
@@ -98,7 +99,6 @@ body {
     --tag-2-active: 41, 97%, 40%; /* yellow-600 */
 
     /* other */
-    --card-foreground: 0 0% 98%;
     --popover: 0 0% 3.9%;
     --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;
