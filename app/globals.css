@@ -148,22 +148,9 @@ body {
       "map map"
       "map map"
       "map map"
-      "coffee coffee"
-      "coffee coffee";
-    /* "travel travel" */
-    /* "travel travel"; */
-    @screen sm {
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-areas:
-        "map map map map"
-        "map map map map"
-        "map map map map";
-      /* "coffee coffee travel travel"
-        "coffee coffee travel travel"
-        "coffee coffee travel travel"; */
-    }
+      "travel travel";
 
-    @screen lg {
+    @screen md {
       grid-template-columns: repeat(6, 1fr);
       grid-template-areas:
         "map map map map travel travel"

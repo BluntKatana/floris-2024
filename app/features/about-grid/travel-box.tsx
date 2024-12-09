@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { BentoBox } from "./about-floris-grid";
 import { getCountryCount, HELLOS } from "./travel-box.constants";
 
@@ -8,12 +7,10 @@ import { getCountryCount, HELLOS } from "./travel-box.constants";
 export function TravelBox() {
   return (
     <BentoBox gridArea="travel">
-      <div className="text-center flex flex-col items-center size-full p-2">
+      <div className="text-center flex flex-col items-center size-full p-2 gap-2">
         <div className="size-full flex justify-center justify flex-wrap h-fit gap-2">
           {HELLOS.map((hello) => (
-            <TravelLabel hello={hello} key={hello.label}>
-              {hello.label}
-            </TravelLabel>
+            <TravelLabel key={hello.label} hello={hello} />
           ))}
         </div>
         <div className="text-center max-w-sm text-balance">
@@ -26,18 +23,12 @@ export function TravelBox() {
   );
 }
 
-function TravelLabel({
-  children,
-  hello,
-}: {
-  children: ReactNode;
-  hello: (typeof HELLOS)[number];
-}) {
+function TravelLabel({ hello }: { hello: (typeof HELLOS)[number] }) {
   const flags = hello.countries.map(([, , emoji]) => emoji).join("");
 
   return (
     <span className="text-center text-lg font-bold px-2 flex">
-      {children} {flags}
+      {hello.label} {flags}
     </span>
   );
 }
