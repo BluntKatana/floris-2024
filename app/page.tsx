@@ -83,7 +83,7 @@ export default async function Home() {
       <section className="section mt-12">
         <MdxLayout className="max-w-full">
           <h2>Projects</h2>
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-4">
             <a
               className="group/rr"
               href="https://www.rotterdamrave.com/"
