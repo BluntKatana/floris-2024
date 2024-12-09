@@ -94,7 +94,7 @@ export default async function Home() {
                   src="/assets/images/rotterdam-rave.avif"
                   alt="Floris Bos"
                   fill
-                  className="group-hover/rr:scale-105 object-cover object-center !m-0 !p-0 z-0 transition-transform duraton-200 ease-in-out"
+                  className="group-hover/rr:scale-100 scale-105 object-cover object-center !m-0 !p-0 z-0 transition-transform duraton-200 ease-in-out"
                 />
                 <div className="size-full absolute z-10" />
                 <div className="absolute top-0 left-0 z-20 border-solid border-0 border-card-border border-r border-b rounded-br-md bg-card px-4 py-1">
@@ -117,7 +117,7 @@ export default async function Home() {
                   src="/assets/images/givesoul.webp"
                   alt="Floris Bos"
                   fill
-                  className="group-hover/gs:scale-105 object-cover object-center !m-0 !p-0 z-0 transition-transform duraton-200 ease-in-out"
+                  className="group-hover/gs:scale-100 scale-105 object-cover object-center !m-0 !p-0 z-0 transition-transform duraton-200 ease-in-out"
                 />
                 <div className="size-full absolute z-10" />
                 <div className="absolute top-0 left-0 z-20 border-solid border-0 border-card-border border-r border-b rounded-br-md bg-card px-4 py-1">
