@@ -98,8 +98,11 @@ export default async function Home() {
                 />
                 <div className="size-full absolute z-10 bg-card/50" />
                 <div className="absolute top-0 left-0 z-20 border-solid border-0 border-card-border border-r border-b rounded-br-md bg-card px-4 py-1">
-                  <h4 className="!m-0 p-0 !text-base">
-                    Freelance: Rotterdam Rave
+                  <h4 className="!m-0 p-0 !text-base flex gap-2 items-center">
+                    <span>Rotterdam Rave</span>
+                    <span className="text-card-foreground/50 font-normal">
+                      [Freelance]
+                    </span>
                   </h4>
                 </div>
               </Card>
@@ -118,7 +121,12 @@ export default async function Home() {
                 />
                 <div className="size-full absolute z-10 bg-card/50" />
                 <div className="absolute top-0 left-0 z-20 border-solid border-0 border-card-border border-r border-b rounded-br-md bg-card px-4 py-1">
-                  <h4 className="!m-0 p-0 !text-base">Freelance: Give Soul</h4>
+                  <h4 className="!m-0 p-0 !text-base flex gap-2 items-center">
+                    <span>Give Soul</span>
+                    <span className="text-card-foreground/50 font-normal">
+                      [Freelance]
+                    </span>
+                  </h4>
                 </div>
               </Card>
             </a>
