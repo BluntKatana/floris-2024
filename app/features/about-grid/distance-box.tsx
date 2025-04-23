@@ -60,7 +60,7 @@ export function DistanceBox({
               {(distanceBetweenPoints ?? DEFAULT_DISTANCE).toFixed(2)} km
             </strong>
           </em>{" "}
-          while 🏊🏼, 🚴🏼‍♂️, and 🏃🏼‍♂️ in 2024 so far &mdash; and there&apos;s more to
+          while 🏊🏼, 🚴🏼‍♂️, and 🏃🏼‍♂️ in 2025 so far &mdash; and there&apos;s more to
           come!
         </div>
       </div>
