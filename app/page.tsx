@@ -12,6 +12,8 @@ import { AboutFlorisGrid } from "@/app/features/about-grid/about-floris-grid";
 import Image from "next/image";
 import { Card } from "./components/card";
 import { getUserInformation } from "./server-utils/user.server";
+import OpenStateIcon from "@/assets/svg/OpenStateIcon";
+import RijksoverheidLogo from "@/assets/svg/RijksoverheidLogo";
 
 export default async function Home() {
   const userinfo = await getUserInformation();
@@ -56,6 +58,20 @@ export default async function Home() {
                 and{" "}
                 <MDXLink href="https://www.givesoul.com" icon={<GsAvatar />}>
                   Give Soul
+                </MDXLink>{" "}
+                and did internships at{" "}
+                <MDXLink
+                  href="https://openstate.eu/nl/"
+                  icon={<OpenStateIcon />}
+                >
+                  OpenState
+                </MDXLink>{" "}
+                and{" "}
+                <MDXLink
+                  href="https://www.uvastartupfund.nl/"
+                  icon={<RijksoverheidLogo />}
+                >
+                  KOOP
                 </MDXLink>
                 .
               </p>
@@ -125,6 +141,29 @@ export default async function Home() {
                     <span>Give Soul</span>
                     <span className="text-card-foreground/50 font-normal">
                       [Freelance]
+                    </span>
+                  </h4>
+                </div>
+              </Card>
+            </a>
+            <a
+              className="group/openlobby"
+              href="https://www.openlobby.nl/"
+              target="__blank"
+            >
+              <Card className="overflow-hidden relative min-h-[150px]">
+                <Image
+                  src="/assets/images/openstate.png"
+                  alt="Floris Bos"
+                  fill
+                  className="group-hover/openlobby:scale-100 dark:opacity-80 opacity-90  group-hover/openlobby:opacity-100 scale-105 object-cover object-top !m-0 !p-0 z-0 transition-all duraton-200 ease-in-out"
+                />
+                <div className="size-full absolute z-10" />
+                <div className="absolute top-0 left-0 z-20 border-solid border-0 border-card-border border-r border-b rounded-br-md bg-card px-4 py-1">
+                  <h4 className="!m-0 p-0 !text-base flex gap-2 items-center">
+                    <span>Open Lobby</span>
+                    <span className="text-card-foreground/50 font-normal">
+                      [Internship]
                     </span>
                   </h4>
                 </div>
