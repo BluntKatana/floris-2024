@@ -1,0 +1,26 @@
+{
+  "home": {
+    "title": "Hi, I am Floris Bos",
+    "description": {
+      "1": "I like building cool things with code, do sports, go on travels, and sit in cafes staring at my laptop for hours.",
+      "2": "I am a master student Computer Science at the",
+      "3": "and",
+      "4": ", and I work on the side as a full-stack developer at",
+      "5": ". I also do freelance work for",
+      "6": "and",
+      "7": "During my studies, I completed internships at",
+      "8": "and"
+    },
+    "projects": {
+      "title": "Projects & Other Work",
+      "description": {
+        "1": "I offer freelance work for startups and small businesses. I can help you with all aspects of your project. Ranging from database architecture to backend development to frontend-focussed tasks and design.",
+        "2": "Working with me meaning working with someone who is passionate about what they do. I cannot yet give you years of experience, but I can give you a lot of energy and passion to get your project off the ground."
+      },
+      "contact": {
+        "1": "See my work below. Would you like to have a chat?",
+        "2": "Contact me"
+      }
+    }
+  }
+}

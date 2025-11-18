@@ -1,4 +1,3 @@
-import { Card } from "@/app/components/card";
 import { PropsWithChildren } from "react";
 import { Coordinates } from "./about-floris.constants";
 import { DistanceBox } from "./distance-box";
@@ -32,11 +31,11 @@ export function BentoBox({
   gridArea,
 }: PropsWithChildren<{ gridArea: GridName }>) {
   return (
-    <Card
-      className="flex size-full p-2 min-h-[200px] text-lg"
+    <div
+      className="card flex size-full p-2 min-h-[200px] text-lg"
       style={{ gridArea: gridArea }}
     >
       {children}
-    </Card>
+    </div>
   );
 }

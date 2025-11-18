@@ -1,0 +1,42 @@
+export const PROJECTS = [
+  {
+    title: "JoJoschool",
+    subtitle: "Part-time",
+    href: "https://www.jojoschool.nl/",
+    target: "__blank",
+    imageSrc: "/assets/images/jojoschool_cover.jpeg",
+    imageAlt: "JoJoschool",
+  },
+  {
+    title: "Rotterdam Rave",
+    subtitle: "Freelance",
+    href: "https://www.rotterdamrave.com/",
+    target: "__blank",
+    imageSrc: "/assets/images/rotterdam-rave.avif",
+    imageAlt: "Rotterdam Rave",
+  },
+  {
+    title: "Give Soul",
+    subtitle: "Freelance",
+    href: "https://www.givesoul.com/",
+    target: "__blank",
+    imageSrc: "/assets/images/givesoul.webp",
+    imageAlt: "Give Soul",
+  },
+  {
+    title: "Open Lobby",
+    subtitle: "Internship",
+    href: "https://www.openlobby.nl/",
+    target: "__blank",
+    imageSrc: "/assets/images/openstate.png",
+    imageAlt: "Open Lobby",
+  },
+  {
+    title: "KOOP",
+    subtitle: "Internship",
+    href: "https://www.uvastartupfund.nl/",
+    target: "__blank",
+    imageSrc: "/assets/images/koop.png",
+    imageAlt: "KOOP",
+  },
+] as const;

@@ -1,119 +1,41 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "./reset.css";
 
-body {
-  color: hsl(var(--foreground));
-  background: hsl(var(--background));
-  font-family: Arial, Helvetica, sans-serif;
+@plugin "@tailwindcss/typography";
 
-  /* transition-property: color, background-color, border-color,
-    text-decoration-color, fill, stroke;
-  transition-timing-function: var(--theme-timing);
-  transition-duration: var(--theme-duration); */
+:root {
+  --background: hsl(48, 25%, 92%);
+  --foreground: #171717;
 
-  overflow-x: hidden;
+  --text-paragraph: #374151;
+  --text-link: #111827;
+  --text-link-hover: #11182795;
+
+  --bg-card: hsl(51 27% 90%);
+  --bg-border-color: hsl(48 12.5% 39.2% / 0.25);
 }
 
-/* colors are in hsl */
-@layer base {
-  :root {
-    /* other */
-    --theme-duration: 500ms;
-    --theme-timing: cubic-bezier(0.41, 0.1, 0.13, 1);
+.dark {
+  --background: hsl(45, 4.9%, 16.1%);
+  --foreground: hsl(0, 0%, 98%);
 
-    --image-brightness: 0.9;
-    --image-brightness-hover: 1;
+  --text-paragraph: hsl(0, 0%, 87%);
+  --text-link: hsl(0, 0%, 98%);
+  --text-link-hover: hsl(0, 0%, 98%);
 
-    --distancemap: 192, 45%, 77%;
+  --bg-card: hsl(45, 5%, 14%);
+  --bg-border-color: hsl(50 5.9% 40% / 0.25);
+}
 
-    /* for svgs */
-    --background-svg-top: 153, 22%, 69%;
-    --background-svg-middle: 169, 23%, 76%;
-    --background-svg-bottom: var(--background);
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 
-    /* colors */
-    --background: 48, 25%, 92%;
-    --foreground: 0 0% 13%;
-    --card: 51 27% 90%;
-    --card-foreground: 0 0% 13%;
-    --card-border: 48 12.5% 39.2%;
-    --header-section: 142 76% 36%; /* text-green-600 */
+  --color-card: var(--bg-card);
+  --color-card-border: var(--bg-border-color);
 
-    --tag-1: 211, 96%, 78%; /* blue-300 */
-    --tag-1-active: 213, 97%, 87%; /* blue-200 */
-    --tag-2: 46, 96%, 47%; /* yellow-500 */
-    --tag-2-active: 41, 97%, 40%; /* yellow-300 */
-
-    /* other */
-    /* --card: 0 0% 100%; */
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-
-    --radius: 0.5rem;
-
-    /* highlighting code in mdx */
-    --sh-class: #2d5e9d;
-    --sh-identifier: #354150;
-    --sh-sign: #8996a3;
-    --sh-property: #0550ae;
-    --sh-entity: #249a97;
-    --sh-jsxliterals: #6266d1;
-    --sh-string: #00a99a;
-    --sh-keyword: #f47067;
-    --sh-comment: #a19595;
-  }
-
-  .dark {
-    /* for svgs */
-    --background-svg-top: 0 0% 0%;
-    --background-svg-middle: 0 0% 9%;
-    --background-svg-bottom: 0 0% 13%;
-
-    --image-brightness: 0.6;
-    --image-brightness-hover: 0.8;
-
-    /* colors */
-    --background: 45 4.9% 16.1%;
-    --foreground: 0 0% 98%;
-    --card: 45, 5%, 14%;
-    --card-foreground: 0 0% 98%;
-    --card-border: 50 5.9% 40%;
-    --header-section: 142 71% 45%; /* green-500 */
-
-    --tag-1: 218 91% 60%; /* blue-500 */
-    --tag-1-active: 221 83% 53%; /* blue-600 */
-    --tag-2: 46, 96%, 47%; /* yellow-500 */
-    --tag-2-active: 41, 97%, 40%; /* yellow-600 */
-
-    /* other */
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-  }
+  --font-sans: var(--font-wotfard);
+  --font-mono: var(--font-wotfard);
 }
 
 @layer base {
@@ -121,25 +43,39 @@ body {
     @apply bg-background text-foreground;
   }
 
+  p {
+    @apply text-pretty text-base;
+    color: var(--text-paragraph);
+    line-height: 1.75;
+  }
+  a {
+    @apply font-medium underline transition-colors duration-200;
+    color: var(--text-link);
+
+    &:hover {
+      color: var(--text-link-hover);
+    }
+  }
+
   .section {
-    @apply max-w-4xl mx-auto px-8 w-full;
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+    @apply max-w-4xl mx-auto px-4 md:px-8;
   }
 
-  .theme-transition {
-    transition-property: color, background-color, border-color,
-      text-decoration-color, fill, stroke;
-    transition-timing-function: var(--theme-timing);
-    transition-duration: var(--theme-duration);
+  h1 {
+    @apply text-5xl font-semibold;
+  }
+  h2 {
+    @apply text-3xl font-semibold;
   }
 }
 
 @layer components {
+  .card {
+    @apply rounded-md border border-solid;
+    background-color: var(--bg-card);
+    border-color: var(--bg-border-color);
+  }
+
   .grid-layout-about-floris {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -150,7 +86,7 @@ body {
       "map map"
       "travel travel";
 
-    @screen md {
+    @media (min-width: 768px) {
       grid-template-columns: repeat(6, 1fr);
       grid-template-areas:
         "map map map map travel travel"
@@ -161,4 +97,10 @@ body {
         "coffee coffee coffee random random random"; */
     }
   }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-wotfard);
 }

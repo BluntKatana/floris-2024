@@ -1,0 +1,26 @@
+{
+  "home": {
+    "title": "Hallo, ik ben Floris Bos",
+    "description": {
+      "1": "Ik bouw websites en apps, sport, reis, en zit in cafés uren te staren naar mijn laptop.",
+      "2": "Ik ben een master student Computer Science aan de",
+      "3": "en",
+      "4": ". In mijn vrije tijd werk ik als full-stack developer bij",
+      "5": ". Ik doe ook zzp werk voor",
+      "6": "en",
+      "7": "Tijdens mijn studie heb ik stage gelopen bij",
+      "8": "en"
+    },
+    "projects": {
+      "title": "Projecten & Andere Werk",
+      "description": {
+        "1": "Ik bied freelance werk aan voor startups en kleine bedrijven. Ik kan je helpen met alle aspecten van je project. Van database architectuur tot backend ontwikkeling en frontend taken en design.",
+        "2": "Werken met mij betekent werken met iemand die passie heeft voor wat programmeren. Ik kan je nog geen jaren ervaring geven, maar ik kan wel veel energie en passie geven om je project op gang te krijgen."
+      },
+      "contact": {
+        "1": "Zie mijn werk hieronder. Wil je meer weten?",
+        "2": "Neem contact op"
+      }
+    }
+  }
+}
