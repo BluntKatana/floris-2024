@@ -1,17 +1,10 @@
-import { getPublicPosts } from "./post/parse-posts";
-
 export const baseUrl = process.env.BASE_URL;
 
 export default async function sitemap() {
-  const posts = getPublicPosts().map((post) => ({
-    url: `${baseUrl}/post/${post.slug}`,
-    lastModified: post.metadata.publishedAt,
-  }));
-
-  const routes = ["", "/post"].map((route) => ({
+  const routes = ["", "/en", "/nl"].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString().split("T")[0],
   }));
 
-  return [...routes, ...posts];
+  return [...routes];
 }

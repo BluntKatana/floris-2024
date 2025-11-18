@@ -6,7 +6,6 @@ import {
   UvaLogo,
   VuSocialAvatarBlauw,
 } from "@/assets/svg";
-// import { getPublicPosts } from "./post/parse-posts";
 import OpenStateIcon from "@/assets/svg/OpenStateIcon";
 import RijksoverheidLogo from "@/assets/svg/RijksoverheidLogo";
 import { PROJECTS } from "@/constants/projects";
