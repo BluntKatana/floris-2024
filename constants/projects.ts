@@ -1,7 +1,9 @@
-export const PROJECTS = [
+import { Dictionary } from "@/app/[lang]/dictionaries";
+
+export const PROJECTS = (dictionary: Dictionary) => [
   {
     title: "JoJoschool",
-    subtitle: "Part-time",
+    subtitle: dictionary.tags["part-time"],
     href: "https://www.jojoschool.nl/",
     target: "__blank",
     imageSrc: "/assets/images/jojoschool_cover.jpeg",
@@ -9,7 +11,7 @@ export const PROJECTS = [
   },
   {
     title: "Rotterdam Rave",
-    subtitle: "Freelance",
+    subtitle: dictionary.tags.freelance,
     href: "https://www.rotterdamrave.com/",
     target: "__blank",
     imageSrc: "/assets/images/rotterdam-rave.avif",
@@ -17,7 +19,7 @@ export const PROJECTS = [
   },
   {
     title: "Give Soul",
-    subtitle: "Freelance",
+    subtitle: dictionary.tags.freelance,
     href: "https://www.givesoul.com/",
     target: "__blank",
     imageSrc: "/assets/images/givesoul.webp",
@@ -25,7 +27,7 @@ export const PROJECTS = [
   },
   {
     title: "Open Lobby",
-    subtitle: "Internship",
+    subtitle: dictionary.tags.internship,
     href: "https://www.openlobby.nl/",
     target: "__blank",
     imageSrc: "/assets/images/openstate.png",
@@ -33,10 +35,10 @@ export const PROJECTS = [
   },
   {
     title: "KOOP",
-    subtitle: "Internship",
+    subtitle: dictionary.tags.internship,
     href: "https://www.uvastartupfund.nl/",
     target: "__blank",
     imageSrc: "/assets/images/koop.png",
     imageAlt: "KOOP",
   },
-] as const;
+];

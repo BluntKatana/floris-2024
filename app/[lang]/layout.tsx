@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
 import { Header } from "@/app/features/header/header";
 import { ThemeProvider } from "@/app/features/theme/theme-provider";
-import "../globals.css";
 import { i18n, Locale } from "@/constants/i18n";
+import type { Metadata } from "next";
+import localFont from "next/font/local";
+import "../globals.css";
+import { getDictionary } from "./dictionaries";
 
 const inter = localFont({
   src: [
@@ -32,26 +33,29 @@ const wotfard = localFont({
   variable: "--font-wotfard",
 });
 
-export const metadata: Metadata = {
-  title: "Floris Bos",
-  description:
-    "Floris Bos is a full-stack developer and master student Computer Science at the VU and UVA. He likes building cool things with code, do sports, go on travels, and sit in cafes staring at his laptop for hours.",
-  openGraph: {
-    images: {
-      url: "https://florisbos.com/assets/images/homepage_1.jpg",
-      alt: "Floris Bos",
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: Locale }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const dictionary = await getDictionary(lang);
+
+  return {
+    title: "Floris Bos",
+    description: dictionary.meta.description,
+    keywords: dictionary.meta.keywords,
+
+    openGraph: {
+      images: {
+        url: "https://florisbos.com/assets/images/homepage_1.jpg",
+        alt: "Floris Bos",
+      },
     },
-  },
-  authors: [{ name: "Floris Bos", url: "https://florisbos.com" }],
-  creator: "Floris Bos",
-  keywords: [
-    "Floris Bos",
-    "full-stack developer",
-    "master student Computer Science",
-    "Netherlands",
-    "portfolio",
-  ],
-};
+    authors: [{ name: "Floris Bos", url: "https://florisbos.com" }],
+    creator: "Floris Bos",
+  };
+}
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));

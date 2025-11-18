@@ -1,4 +1,14 @@
 {
+  "meta": {
+    "description": "Floris Bos is een full-stack ontwikkelaar en masterstudent Computerwetenschappen aan de VU en UVA. Hij houdt ervan om gave dingen te bouwen met code, te sporten, te reizen en urenlang in cafés naar zijn laptop te staren.",
+    "keywords": [
+      "Floris Bos",
+      "full-stack ontwikkelaar",
+      "masterstudent Informatica",
+      "Nederland",
+      "portfolio"
+    ]
+  },
   "home": {
     "title": "Hallo, ik ben Floris Bos",
     "description": {
@@ -22,5 +32,10 @@
         "2": "Neem contact op"
       }
     }
+  },
+  "tags": {
+    "freelance": "ZZP",
+    "part-time": "Deeltijds werk",
+    "internship": "Stage"
   }
 }

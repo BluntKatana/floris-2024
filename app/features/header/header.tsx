@@ -21,6 +21,8 @@ export function Header() {
 
             {/* Right side */}
             <div className="items-center [&>a]:px-2 flex">
+              {/* <LocaleSwitcher /> */}
+
               <ThemeToggle />
               <Link href="emailto:florisbos1204@gmail.com">
                 <div className="size-10 grid place-items-center">

@@ -92,7 +92,7 @@ export default async function Home({
           .
         </p>
         <div className="flex flex-col gap-4">
-          {PROJECTS.map((project) => (
+          {PROJECTS(dictionary).map((project) => (
             <a href={project.href} target={project.target} key={project.title}>
               <ProjectCard {...project} />
             </a>

@@ -1,4 +1,14 @@
 {
+  "meta": {
+    "description": "Floris Bos is a full-stack developer and master student Computer Science at the VU and UVA. He likes building cool things with code, do sports, go on travels, and sit in cafes staring at his laptop for hours.",
+    "keywords": [
+      "Floris Bos",
+      "full-stack developer",
+      "master student Computer Science",
+      "Netherlands",
+      "portfolio"
+    ]
+  },
   "home": {
     "title": "Hi, I am Floris Bos",
     "description": {
@@ -22,5 +32,11 @@
         "2": "Contact me"
       }
     }
+  },
+
+  "tags": {
+    "freelance": "Freelance",
+    "part-time": "Part-time",
+    "internship": "Internship"
   }
 }
