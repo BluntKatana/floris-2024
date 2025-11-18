@@ -52,26 +52,6 @@ export function Header() {
               <Link href="/" className="h-12 flex flex-col justify-center">
                 <h1 className="text-2xl font-bold">Floris Bos</h1>
               </Link>
-              <div className="items-center gap-4 hidden lg:flex">
-                {/* <Link
-                  href="/about-floris"
-                  className="px-4 h-12 flex flex-col justify-center"
-                >
-                  <span>About</span>
-                </Link> */}
-                <Link
-                  href="/projects"
-                  className="px-4 h-12 flex flex-col justify-center"
-                >
-                  <span>Projects</span>
-                </Link>
-                <Link
-                  href="/thoughts"
-                  className="px-4 h-12 flex flex-col justify-center"
-                >
-                  <span>Thoughts</span>
-                </Link>
-              </div>
             </div>
 
             {/* Show on mobile */}
@@ -163,13 +143,6 @@ export function Header() {
               >
                 <Github className="size-5" />
               </Link>
-              {/* <Link
-                href="/rss"
-                target="_blank"
-                className="size-10 grid place-items-center"
-              >
-                <Rss className="size-5" />
-              </Link> */}
             </div>
           </header>
         </div>

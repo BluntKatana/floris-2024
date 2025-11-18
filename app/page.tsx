@@ -8,16 +8,13 @@ import {
   VuSocialAvatarBlauw,
 } from "@/assets/svg";
 // import { getPublicPosts } from "./post/parse-posts";
-import { AboutFlorisGrid } from "@/app/features/about-grid/about-floris-grid";
-import Image from "next/image";
-import { Card } from "./components/card";
-import { getUserInformation } from "./server-utils/user.server";
 import OpenStateIcon from "@/assets/svg/OpenStateIcon";
 import RijksoverheidLogo from "@/assets/svg/RijksoverheidLogo";
+import Image from "next/image";
+import { Card } from "./components/card";
+import { AboutFlorisGrid } from "./features/about-grid/about-floris-grid";
 
 export default async function Home() {
-  const userinfo = await getUserInformation();
-
   return (
     <main className="pb-16">
       <section className="section">
@@ -30,14 +27,7 @@ export default async function Home() {
                 and sit in cafes staring at my laptop for hours.{" "}
               </p>
               <p>
-                I work as a full-stack developer at{" "}
-                <MDXLink
-                  href="https://www.jojoschool.nl"
-                  icon={<JojoschoolFavicon />}
-                >
-                  JoJoschool
-                </MDXLink>{" "}
-                and I&apos;m a master student Computer Science at the{" "}
+                I am a master student Computer Science at the{" "}
                 <MDXLink
                   href="https://www.vu.nl"
                   icon={<VuSocialAvatarBlauw />}
@@ -48,29 +38,31 @@ export default async function Home() {
                 <MDXLink href="https://www.uva.nl" icon={<UvaLogo />}>
                   UVA
                 </MDXLink>
-                . I&apos;ve also done some freelance work for{" "}
+                , and I work on the side as a full-stack developer at{" "}
+                <MDXLink
+                  href="https://www.jojoschool.nl"
+                  icon={<JojoschoolFavicon />}
+                >
+                  JoJoschool
+                </MDXLink>
+                . I also do freelance work for{" "}
                 <MDXLink
                   href="https://www.rotterdamrave.com"
                   icon={<RrAvatar />}
                 >
                   Rotterdam Rave
-                </MDXLink>{" "}
-                and{" "}
+                </MDXLink>
+                ,
                 <MDXLink href="https://www.givesoul.com" icon={<GsAvatar />}>
                   Give Soul
-                </MDXLink>{" "}
-                and did internships at{" "}
-                <MDXLink
-                  href="https://openstate.eu/nl/"
-                  icon={<OpenStateIcon />}
-                >
+                </MDXLink>
+                , and <MDXLink href="/">Penny</MDXLink>. During my studies, I
+                completed internships at and completed internships at{" "}
+                <MDXLink href="/" icon={<OpenStateIcon />}>
                   OpenState
                 </MDXLink>{" "}
                 and{" "}
-                <MDXLink
-                  href="https://www.uvastartupfund.nl/"
-                  icon={<RijksoverheidLogo />}
-                >
+                <MDXLink href="/" icon={<RijksoverheidLogo />}>
                   KOOP
                 </MDXLink>
                 .
@@ -88,17 +80,31 @@ export default async function Home() {
           </Card>
         </div>
       </section>
-      <section className="section">
-        <div className="mt-6">
-          <AboutFlorisGrid
-            userCoordinates={userinfo?.coords ?? null}
-            distanceBetweenPoints={3946} // stravaStats ? stravaStats.ytd_run_totals.distance / 1000 : undefined
-          />
-        </div>
+      <section className="section mt-6">
+        <AboutFlorisGrid
+          userCoordinates={null}
+          distanceBetweenPoints={10_000} // stravaStats ? stravaStats.ytd_run_totals.distance / 1000 : undefined
+        />
       </section>
       <section className="section mt-12">
         <MdxLayout className="max-w-full">
-          <h2>Projects</h2>
+          <h2>Projects & Other Work</h2>
+          <p>
+            I offer freelance work for startups and small businesses. I can help
+            you with all aspects of your project. Ranging from database
+            architecture to backend development to frontend-focussed tasks and
+            design.
+          </p>
+          <p>
+            Working with me meaning working with someone who is passionate about
+            what they do. I cannot yet give you years of experience, but I can
+            give you a lot of energy and passion to get your project off the
+            ground.
+          </p>
+          <p className="mb-7">
+            See my work below. Would you like to have a chat?{" "}
+            <a href="mailto:florisbos1204@gmail.com">Contact me</a>
+          </p>
           <div className="flex flex-col gap-4">
             <a
               className="group/rr"
@@ -169,13 +175,30 @@ export default async function Home() {
                 </div>
               </Card>
             </a>
+            <a
+              className="group/jojoschool"
+              href="https://www.jojoschool.nl/"
+              target="__blank"
+            >
+              <Card className="overflow-hidden relative min-h-[150px]">
+                <Image
+                  src="/assets/images/jojoschool.png"
+                  alt="Floris Bos"
+                  fill
+                  className="group-hover/jojoschool:scale-100 dark:opacity-80 opacity-90  group-hover/jojoschool:opacity-100 scale-105 object-cover object-top !m-0 !p-0 z-0 transition-all duraton-200 ease-in-out"
+                />
+                <div className="size-full absolute z-10" />
+                <div className="absolute top-0 left-0 z-20 border-solid border-0 border-card-border border-r border-b rounded-br-md bg-card px-4 py-1">
+                  <h4 className="!m-0 p-0 !text-base flex gap-2 items-center">
+                    <span>JoJoschool</span>
+                    <span className="text-card-foreground/50 font-normal">
+                      [Part-time]
+                    </span>
+                  </h4>
+                </div>
+              </Card>
+            </a>
           </div>
-        </MdxLayout>
-      </section>
-      <section className="section mt-12">
-        <MdxLayout>
-          <h2>Thoughts</h2>
-          <p>nothing yet</p>
         </MdxLayout>
       </section>
     </main>
