@@ -12,7 +12,7 @@ export function ThemeToggle() {
 
   return (
     <button
-      className="flex items-center justify-center size-10"
+      className="flex items-center justify-center size-10 md:w-14"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {theme === "dark" ? (

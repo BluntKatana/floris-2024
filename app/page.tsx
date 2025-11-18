@@ -83,7 +83,7 @@ export default async function Home() {
       <section className="section mt-6">
         <AboutFlorisGrid
           userCoordinates={null}
-          distanceBetweenPoints={10_000} // stravaStats ? stravaStats.ytd_run_totals.distance / 1000 : undefined
+          distanceBetweenPoints={4531} // stravaStats ? stravaStats.ytd_run_totals.distance / 1000 : undefined
         />
       </section>
       <section className="section mt-12">
@@ -106,6 +106,29 @@ export default async function Home() {
             <a href="mailto:florisbos1204@gmail.com">Contact me</a>
           </p>
           <div className="flex flex-col gap-4">
+            <a
+              className="group/jojoschool"
+              href="https://www.jojoschool.nl/"
+              target="__blank"
+            >
+              <Card className="overflow-hidden relative min-h-[150px]">
+                <Image
+                  src="/assets/images/jojoschool_cover.jpeg"
+                  alt="Floris Bos"
+                  fill
+                  className="group-hover/jojoschool:scale-100 dark:opacity-80 opacity-90  group-hover/jojoschool:opacity-100 scale-105 object-cover object-top !m-0 !p-0 z-0 transition-all duraton-200 ease-in-out"
+                />
+                <div className="size-full absolute z-10" />
+                <div className="absolute top-0 left-0 z-20 border-solid border-0 border-card-border border-r border-b rounded-br-md bg-card px-4 py-1">
+                  <h4 className="!m-0 p-0 !text-base flex gap-2 items-center">
+                    <span>JoJoschool</span>
+                    <span className="text-card-foreground/50 font-normal">
+                      [Part-time]
+                    </span>
+                  </h4>
+                </div>
+              </Card>
+            </a>
             <a
               className="group/rr"
               href="https://www.rotterdamrave.com/"
@@ -170,29 +193,6 @@ export default async function Home() {
                     <span>Open Lobby</span>
                     <span className="text-card-foreground/50 font-normal">
                       [Internship]
-                    </span>
-                  </h4>
-                </div>
-              </Card>
-            </a>
-            <a
-              className="group/jojoschool"
-              href="https://www.jojoschool.nl/"
-              target="__blank"
-            >
-              <Card className="overflow-hidden relative min-h-[150px]">
-                <Image
-                  src="/assets/images/jojoschool.png"
-                  alt="Floris Bos"
-                  fill
-                  className="group-hover/jojoschool:scale-100 dark:opacity-80 opacity-90  group-hover/jojoschool:opacity-100 scale-105 object-cover object-top !m-0 !p-0 z-0 transition-all duraton-200 ease-in-out"
-                />
-                <div className="size-full absolute z-10" />
-                <div className="absolute top-0 left-0 z-20 border-solid border-0 border-card-border border-r border-b rounded-br-md bg-card px-4 py-1">
-                  <h4 className="!m-0 p-0 !text-base flex gap-2 items-center">
-                    <span>JoJoschool</span>
-                    <span className="text-card-foreground/50 font-normal">
-                      [Part-time]
                     </span>
                   </h4>
                 </div>

@@ -19,14 +19,14 @@ const Map = ({ fromCoordinates, toCoordinates }: MapProps) => {
   const { theme } = useTheme();
 
   // for now overwrite the coordinates until i fix the randomized coordinates
-  fromCoordinates = [52.12985407953282, 5.0664778819863185];
-  toCoordinates = [42.71800734077719, -0.4985841995353725];
+  // fromCoordinates = [52.12985407953282, 5.0664778819863185];
+  // toCoordinates = [42.71800734077719, -0.4985841995353725];
 
   return (
     <div className={cn("size-full", theme === "dark" && "leaflet-dark-mode")}>
       <MapContainer
         center={getCenter(fromCoordinates, toCoordinates)}
-        zoom={4}
+        zoom={2}
         dragging={false}
         touchZoom={false}
         scrollWheelZoom={false}

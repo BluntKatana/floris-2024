@@ -57,18 +57,18 @@ export function generateRandomCoordinates(
   const startLatRad = (startlat * Math.PI) / 180;
   const startLongRad = (startlong * Math.PI) / 180;
 
-  const rand1 = Math.random();
-  const rand2 = Math.random();
-
   // Convert all latitudes and longitudes to radians.
   const radiusEarth = 6378.796924; // km
 
   // Convert maximum distance to radians.
   const maxdistRad = maxdist / radiusEarth;
 
-  const dist = Math.acos(rand1 * (Math.cos(maxdistRad) - 1) + 1);
+  // Calculates the distance to the new point.
+  const dist = Math.acos(1 * (Math.cos(maxdistRad) - 1) + 1);
 
-  const brg = 2 * Math.PI * rand2;
+  // Choose a random rotation around the starting point.
+  const rotationRand = Math.random();
+  const brg = 2 * Math.PI * rotationRand;
 
   const lat = Math.asin(
     Math.sin(startLatRad) * Math.cos(dist) +

@@ -8,7 +8,7 @@ export function TravelBox() {
   return (
     <BentoBox gridArea="travel">
       <div className="text-center flex flex-col items-center size-full p-2 gap-2">
-        <div className="size-full flex justify-center justify flex-wrap h-fit gap-2">
+        <div className="size-full flex justify-center justify flex-wrap h-fit gap-x-3 gap-y-2">
           {HELLOS.map((hello) => (
             <TravelLabel key={hello.label} hello={hello} />
           ))}
@@ -27,7 +27,7 @@ function TravelLabel({ hello }: { hello: (typeof HELLOS)[number] }) {
   const flags = hello.countries.map(([, , emoji]) => emoji).join("");
 
   return (
-    <span className="text-center text-lg font-bold px-2 flex">
+    <span className="text-center text-lg font-bold flex">
       {hello.label} {flags}
     </span>
   );
